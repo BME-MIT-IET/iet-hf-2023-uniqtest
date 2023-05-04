@@ -1,0 +1,220 @@
+Amennyiben a map.txt nem elerheto, vagy serult a alabbi bementtel lehet eloallitani a teszt palyat:
+
+init
+field normal Norm
+field shelter Shelt
+field laboratory Lab
+field trap Trap
+field storage Stor
+neighbours Norm Lab
+neighbours Norm Shelt
+neighbours Norm Trap
+neighbours Norm Stor
+setvirologist V1 Norm
+setvirologist V2 Norm
+setvirologist V3 Norm
+setvirologist V4 Norm
+setsubstance amino 15 Stor
+setsubstance nucleotide 15 Stor
+setgencode dancer Lab
+setequipment cape C1 Shelt
+setequipment glove G1 Shelt
+setequipment axe A1 Shelt
+setequipment bag B1 Shelt
+testmapinit
+save map
+
+--------------------------------------------------------------------------------------
+Teszt 1
+
+loadMap map.txt
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 2
+
+loadMap map.txt
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 3
+
+loadMap map.txt
+setVirState V1 dancer
+virologistState V1
+--------------------------------------------------------------------------------------
+Teszt 4
+
+loadMap map.txt
+move V1 Lab off
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 5
+
+loadMap map.txt
+move V4 Lab on
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 6
+
+loadMap map.txt
+move V1 Lab off
+learnGencode V1
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 7
+
+loadMap map.txt
+move V2 Lab off
+learnGencode V2
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 8
+
+loadMap map.txt
+craftAgent dancer V1
+craftAgent alzheimer V2
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 9
+
+loadMap map.txt
+move V1 Lab off
+learnGencode v1
+move V1 Norm off
+craftAgent alzheimer V2
+useAgent alzheimer V2 V1
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 10
+
+loadMap map.txt
+dropequipment C3 V3
+craftAgent paralyzing V2
+useAgent paralyzing V2 V3
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 11
+
+loadMap map.txt
+setEquipment glove G4 Norm
+takeEquipment G4 V2
+dropequipment C3 V3
+craftAgent paralyzing V2
+useAgent paralyzing V2 V3
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 12
+
+loadMap map.txt
+move V1 Lab off
+learnGencode V1
+move V1 Norm off
+move V1 Stor off
+takeSubstance amino V1
+takeSubstance nucleotide V1
+move V1 Norm off
+craftAgent resistance V2
+useAgent resistance V2 V2
+craftAgent dancer V1
+useAgent dancer V1 V2
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 13
+
+loadMap map.txt
+move V1 Stor off
+takeSubstance amino V1
+takeSubstance nucleotide V1
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 14
+
+loadMap map.txt
+move V2 Stor off
+takeSubstance amino V2
+virologistState V2
+--------------------------------------------------------------------------------------
+Teszt 15
+
+loadMap map.txt
+move V1 Shelt off
+takeEquipment C1 V1
+virologistState V1
+--------------------------------------------------------------------------------------
+Teszt 16
+
+loadMap map.txt
+setVirState V3 normal
+dropEquipment C3 V3
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 17
+
+loadMap map.txt
+setEquipment bag B2 Norm 
+takeEquipment B2 V2
+stealEquipment B2 V1 V2
+virologistState V1
+virologistState V2
+--------------------------------------------------------------------------------------
+Teszt 18
+
+loadMap map.txt
+stealEquipment G3 V1 V3
+virologistState V1
+virologistState V3
+--------------------------------------------------------------------------------------
+Teszt 19
+
+loadMap map.txt
+stealSubstance V1 V2
+virologistState V1
+virologistState V2
+--------------------------------------------------------------------------------------
+Teszt 20
+
+loadMap map.txt
+stealSubstance V1 V3
+virologistState V1
+virologistState V3
+--------------------------------------------------------------------------------------
+Teszt 21
+
+loadMap map.txt
+<Változtatások, tetszőleges parancsok>
+viewGame
+save mentett
+Majd a program újraindítását követően:
+loadMap mentett.txt
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 22
+
+loadMap map.txt
+craftAgent resistance V2
+useAgent resistance V2 V2
+stepAll
+stepAll
+stepAll
+viewGame
+--------------------------------------------------------------------------------------
+Teszt 23
+
+init
+field laboratory Q
+field normal S
+field trap T
+neighbours Q S
+neighbours S T
+setGencode dancer Q
+setVirologist V1 Q
+setVirologist V2 S
+setEquipment cape C1 Q
+setEquipment axe A1 Q
+takeEquipment C1 V1
+takeEquipment A1 V1
+move V2 T off
+move V2 S off
+move V1 S off
+kill V1 V2
+viewGame
+--------------------------------------------------------------------------------------

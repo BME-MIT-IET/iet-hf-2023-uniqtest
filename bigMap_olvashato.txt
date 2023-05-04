@@ -1,0 +1,109 @@
+Mezok: F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F27, F28, F29, F30, F31, F32, F33, F34, F35, ST1, ST2, ST3, ST4, ST5, SH1, SH2, SH3, SH4, SH5, L1, L2, L3, L4, T1, T2
+F1 szomszedai: L1, F2, F11
+F2 szomszedai: SH1, F1, SH2
+F3 szomszedai: T1, F4, F5
+F4 szomszedai: F3, L2
+F5 szomszedai: F3, L2, F8, SH1
+F6 szomszedai: L2, F8, ST2, F7
+F7 szomszedai: F6, ST2
+F8 szomszedai: F6, F5, F9, F13
+F9 szomszedai: SH1, F10, F8
+F10 szomszedai: F9, SH2, ST3
+F11 szomszedai: F1, F12, F17
+F12 szomszedai: F11, F16
+F13 szomszedai: F8, ST3, F18, F14
+F14 szomszedai: ST2, F13, F15
+F15 szomszedai: F14, SH3, F20
+F16 szomszedai: F12, F17, SH4
+F17 szomszedai: F11, SH2, F16, SH4, F21, ST4
+F18 szomszedai: F22, F13, SH3, F19, L3
+F19 szomszedai: SH3, F18, F23, F20
+F20 szomszedai: F15, F19, F23
+F21 szomszedai: F17, F26, F27, F22, ST3
+F22 szomszedai: F21, ST3, F18
+F23 szomszedai: L3, F19, F20, F33
+F24 szomszedai: SH4, L4, F25
+F25 szomszedai: F24, L4, F29, ST4
+F26 szomszedai: ST4, F29, F21, F27
+F27 szomszedai: T2, F26, F28, F21
+F28 szomszedai: F27, L3, F32
+F29 szomszedai: F25, F30, F26
+F30 szomszedai: F31, F29, T2
+F31 szomszedai: L4, F35, F30
+F32 szomszedai: T2, F28, F34
+F33 szomszedai: F23, F34, ST5
+F34 szomszedai: F32, F33, ST5, SH5
+F35 szomszedai: F31, SH5
+ST1 szomszedai: L1, T1
+ST2 szomszedai: F6, F7, F14
+ST3 szomszedai: F10, F21, F13, F22
+ST4 szomszedai: F17, F25, F26
+ST5 szomszedai: F34, F33
+SH1 szomszedai: T1, F5, F2, F9
+SH2 szomszedai: F2, F10, F17
+SH3 szomszedai: F15, F19, F18
+SH4 szomszedai: F16, F17, F24
+SH5 szomszedai: F35, F34
+L1 szomszedai: ST1, T1, F1
+L2 szomszedai: F4, F5, F6
+L3 szomszedai: F18, F23, F28
+L4 szomszedai: F24, F25, F31
+T1 szomszedai: ST1, L1, F3, SH1
+T2 szomszedai: F30, F27, F32
+
+Mezokon talalhato dolgok: 
+F1 mezon levo dolgok: 
+F2 mezon levo dolgok: 
+F3 mezon levo dolgok: 
+F4 mezon levo dolgok: 
+F5 mezon levo dolgok: 
+F6 mezon levo dolgok: 
+F7 mezon levo dolgok: 
+F8 mezon levo dolgok: 
+F9 mezon levo dolgok: 
+F10 mezon levo dolgok: 
+F11 mezon levo dolgok: 
+F12 mezon levo dolgok: 
+F13 mezon levo dolgok: 
+F14 mezon levo dolgok: 
+F15 mezon levo dolgok: 
+F16 mezon levo dolgok: 
+F17 mezon levo dolgok: 
+F18 mezon levo dolgok: 
+F19 mezon levo dolgok: 
+F20 mezon levo dolgok: 
+F21 mezon levo dolgok: 
+F22 mezon levo dolgok: 
+F23 mezon levo dolgok: 
+F24 mezon levo dolgok: 
+F25 mezon levo dolgok: 
+F26 mezon levo dolgok: 
+F27 mezon levo dolgok: 
+F28 mezon levo dolgok: 
+F29 mezon levo dolgok: 
+F30 mezon levo dolgok: 
+F31 mezon levo dolgok: 
+F32 mezon levo dolgok: 
+F33 mezon levo dolgok: 
+F34 mezon levo dolgok: 
+F35 mezon levo dolgok: 
+ST1 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+ST2 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+ST3 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+ST4 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+ST5 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+SH1 mezon levo dolgok: null null null null null 
+SH2 mezon levo dolgok: null null 
+SH3 mezon levo dolgok: null null 
+SH4 mezon levo dolgok: null null null null 
+SH5 mezon levo dolgok: null null null null 
+L1 mezon levo dolgok: parCode 
+L2 mezon levo dolgok: danCode 
+L3 mezon levo dolgok: resCode 
+L4 mezon levo dolgok: alzCode 
+T1 mezon levo dolgok: 
+T2 mezon levo dolgok: 
+
+Virologusoknal levo dolgok: 
+
+Virologusokon levo effect-ek: 
