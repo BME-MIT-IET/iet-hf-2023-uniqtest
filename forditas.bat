@@ -1,2 +1,0 @@
-if not exist bin md bin
-javac -d bin src\Agents\*.java src\AnointedBehaviours\*.java src\Core\*.java src\Equipments\*.java src\Fields\*.java src\FileManagement\*.java src\Gencodes\*.java src\Grphics\*.java src\KillBehaviours\*.java src\Main\*.java src\MoveBehaviours\*.java src\Protointerface\*.java src\VirologistBehaviours\*.java
