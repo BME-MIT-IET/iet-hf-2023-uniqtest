@@ -19,6 +19,7 @@ public class MoveTests {
 
     @BeforeEach
     public void setUp() {
+
         game = new Game(1);
         field = new Field();
         neighbourField = new Field();

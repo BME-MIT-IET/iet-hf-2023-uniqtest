@@ -263,7 +263,7 @@ public final class Game implements Serializable {
      * Jatek ablak frissitese
      */
     public void RefreshFrame() {
-    	gf.Refresh();
+    	if(gf!=null) gf.Refresh();
     }
     
     /**

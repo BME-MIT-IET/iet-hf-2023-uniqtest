@@ -4,9 +4,7 @@ import main.java.iet.Core.Game;
 import main.java.iet.Core.Virologist;
 import main.java.iet.Equipments.*;
 import main.java.iet.Fields.Field;
-import main.java.iet.Fields.LaboratoryField;
 import main.java.iet.Fields.ShelterField;
-import main.java.iet.Gencodes.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,10 +15,10 @@ public class ShelterAndEquipmentTests {
     Virologist shelterVirologist;
     Game game;
     Field shelter;
-    Equipment cape = new Cape(null);
-    Equipment axe = new Cape(null);
-    Equipment bag = new Bag(null);
-    Equipment glove = new Glove(null);
+    Equipment cape;
+    Equipment axe;
+    Equipment bag;
+    Equipment glove;
 
     @BeforeEach
     public void setUp() {
@@ -40,8 +38,6 @@ public class ShelterAndEquipmentTests {
         shelter.AddEquipment(glove);
 
     }
-
-
 
 
     @Test
