@@ -29,7 +29,7 @@ public class KillTests {
 
     @Test
     public void KillBearWithAxeTest() {
-        var axe = new Axe(attacker);;
+        Axe axe = new Axe(attacker);;
         attacker.getEquipments().add(axe);
         attacker.setKillBehaviour(new KillWithAxe(axe));
 
@@ -47,7 +47,7 @@ public class KillTests {
 
     @Test
     public void KillNormalPlayerWithAxe() {
-        var axe = new Axe(attacker);;
+        Axe axe = new Axe(attacker);;
         attacker.getEquipments().add(axe);
         attacker.setKillBehaviour(new KillWithAxe(axe));
         attacker.UseKill(victim);

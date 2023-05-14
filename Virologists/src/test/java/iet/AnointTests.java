@@ -31,8 +31,8 @@ public class AnointTests {
     @Test
     public void TakeAnointTest() {
         virologist.setAnointedBehaviour(new TakeAnoint());
-        var tempVir = new Virologist(game,field);
-        var dancerAgent = new DancerAgent();
+        Virologist tempVir = new Virologist(game,field);
+        DancerAgent dancerAgent = new DancerAgent();
         tempVir.Anoint(virologist,dancerAgent);
 
         assertTrue(virologist.getEffects().contains(dancerAgent));
@@ -41,8 +41,8 @@ public class AnointTests {
     @Test
     public void BlockAnointTest() {
         virologist.setAnointedBehaviour(new BlockAnoint());
-        var tempVir = new Virologist(game,field);
-        var dancerAgent = new DancerAgent();
+        Virologist tempVir = new Virologist(game,field);
+        DancerAgent dancerAgent = new DancerAgent();
         tempVir.Anoint(virologist,dancerAgent);
 
         assertFalse(virologist.getEffects().contains(dancerAgent));
@@ -51,8 +51,8 @@ public class AnointTests {
     @Test
     public void ReturnAnointTest() {
         virologist.setAnointedBehaviour(new ReturnAnoint(new Glove(virologist)));
-        var tempVir = new Virologist(game,field);
-        var dancerAgent = new DancerAgent();
+        Virologist tempVir = new Virologist(game,field);
+        DancerAgent dancerAgent = new DancerAgent();
         tempVir.Anoint(virologist,dancerAgent);
 
         assertFalse(virologist.getEffects().contains(dancerAgent));
@@ -61,11 +61,11 @@ public class AnointTests {
 
     @Test
     public void MightBlockAnointTest() {
-        var mgb =new MightBlockAnoint();
+        MightBlockAnoint mgb =new MightBlockAnoint();
         mgb.setDet("on");
         virologist.setAnointedBehaviour(mgb);
-        var tempVir = new Virologist(game,field);
-        var dancerAgent = new DancerAgent();
+        Virologist tempVir = new Virologist(game,field);
+        DancerAgent dancerAgent = new DancerAgent();
 
         assertFalse(virologist.getEffects().contains(dancerAgent));
 
