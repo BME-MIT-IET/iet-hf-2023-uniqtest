@@ -1,6 +1,5 @@
 package test.java.iet;
 
-import main.java.iet.Agents.BearAgent;
 import main.java.iet.Core.Game;
 import main.java.iet.Core.Virologist;
 import main.java.iet.Equipments.Axe;
@@ -29,7 +28,7 @@ public class KillTests {
 
     @Test
     public void KillBearWithAxeTest() {
-        Axe axe = new Axe(attacker);;
+        Axe axe = new Axe(attacker);
         attacker.getEquipments().add(axe);
         attacker.setKillBehaviour(new KillWithAxe(axe));
 
@@ -40,14 +39,14 @@ public class KillTests {
         assertFalse(game.getVirologists().contains(victim));
         assertEquals(0,axe.getNumberOfUse());
         assertEquals(CantKill.class,attacker.getKillBehaviour().getClass());
-        //assertFalse(attacker.getEquipments().contains(axe));
+        assertFalse(attacker.getEquipments().contains(axe));
 
 
     }
 
     @Test
     public void KillNormalPlayerWithAxe() {
-        Axe axe = new Axe(attacker);;
+        Axe axe = new Axe(attacker);
         attacker.getEquipments().add(axe);
         attacker.setKillBehaviour(new KillWithAxe(axe));
         attacker.UseKill(victim);

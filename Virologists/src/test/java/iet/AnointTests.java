@@ -9,7 +9,6 @@ import main.java.iet.Core.Game;
 import main.java.iet.Core.Virologist;
 import main.java.iet.Equipments.Glove;
 import main.java.iet.Fields.Field;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
