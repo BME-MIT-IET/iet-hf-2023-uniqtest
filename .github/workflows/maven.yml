@@ -10,9 +10,9 @@ name: Java CI with Maven, SonarCloud
 
 on:
   push:
-    branches: [ "main" , "UnitTests", "sonarcloud"]
+    branches: [ "main" , "UnitTests"]
   pull_request:
-    branches: [ "main" , "UnitTests", "sonarcloud"]
+    branches: [ "main" , "UnitTests"]
     types: [opened, synchronize, reopened]
 
 jobs:
