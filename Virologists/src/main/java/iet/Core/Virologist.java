@@ -675,11 +675,11 @@ public class Virologist implements Serializable {
      * Hozzaad egy gencode-ot a gencode set-hez.
      * @param g Gencode, amit hozza akarunk adni.
      */
-    public void AddGencode(Gencode g) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	gencodes.add(g);
-    }
+	public void AddGencode(Gencode g) {
+		if (!gencodes.contains(g)) {
+			gencodes.add(g);
+		}
+	}
 
 	/**
 	 * @return killBehaviour
