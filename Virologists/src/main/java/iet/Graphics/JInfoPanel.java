@@ -62,24 +62,24 @@ public class JInfoPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JDialog dialog = new JDialog();
-				JLabel lab = new JLabel("<html>A jobb panelen l�tsz�dik hanyadik k�r van, �s hogy �ppen h�nyas sz�m� "+
-										"j�t�kos van soron. L�tsz�dik m�g a soron l�v� j�t�kos amino �s nukleotid mennyis�ge. "+
-										"A soron l�v� j�t�kos virol�gusa mellett mindig megjelenik a YOU felirat. "+
-										"<br><br>A fels� men�sorban meg lehet n�zni, milyen felszerel�seket gy�jt�tt az adott virol�gus, "+
-										"milyen k�dokat tanult m�r meg, �s milyen �genseket k�sz�tett. "+
-										"<br><br>Egy k�rben a k�vetkez� dolgokat lehet tenni: mez�n l�v� dolgokat felvenni/ megtanulni, fels� men�ben l�v� dolgokat haszn�lni. " +
-										"Lehet kattintani egy �gensre, majd egy virol�gusra, aki ez�ltal meg fog ken�dni, hacsak nincs valamije, ami megv�den�."+
-										" Fontos, hogy minden k�rben csak egyszer lehet mez�t v�ltani, a k�r v�g�t az EndTurn gombbal lehet jelezni. "+
-										"<br>A r�zsasz�n mez�k a szomsz�dos mez�k, �tl�p�shez r� kell kattintani. (Egy kis seg�ts�g az �tl�that�s�ghoz: ST=storage, SH=shelter, F=(normal) field, L=lab, T=trap, de ezt nem tudni, mert vakok a virol�gusok.)" +
-										"<br>Ha medv�v� v�ltozol, akkor is lehet felszedni felszerel�seket, de csak az�rt, hogy elvedd m�sok el�l, haszn�lni nem tudod. " +
-										"Medv�n�l is kell szomsz�dos mez�re kattintani, ha el szeretn�l l�pni, azonban mindegy melyikre kattintasz, v�letlenszer�en fog valamelyikre l�pni." +
-										"(T�ncv�rus hat�sa alatt szint�n.)" + 
-										"<br><br>Az ikonok: <br> feh�rk�penyes ember: virol�gus <br>medve: medv�v� v�lt virol�gus <br>k�mcs�vek: amino �s nukleotid" +
-										"<br>zs�k/k�peny/keszty�/balta: felszerel�sek <br>DNS: genetikai k�d<br><br>" +
-										"Ha a list�dban fel�l r�kattintasz egy felszerel�sre, azt ledobod a mez�re. " +
-										"Amennyiben GenCode-ra kattintasz, olyan �genst k�sz�l (ha van el�g amino/nukleotid), �s ez megjelenik az �gensek men�pont alatt." +
-										"�gensre kattintva azt haszn�lhatod valakin. " +
-										"Fejsz�vel csak medv�t lehet �lni, mert a virol�gusok aranyosak �s nem �lik egym�st, max megb�n�tj�k a m�sikat.");
+				JLabel lab = new JLabel("<html>A jobb panelen latszodik hanyadik kor van, es hogy eppen hanyas szamu "+
+										"jatekos van soron. Latszodik mag a soron levo jatekos amino es nukleotid mennyisege. "+
+										"A soron levo jatekos virologusa mellett mindig megjelenik a YOU felirat. "+
+										"<br><br>A felso menusorban meg lehet nezni, milyen felszereleseket gyujtott az adott virologus, "+
+										"milyen kodokat tanult mar meg, es milyen agenseket keszitett. "+
+										"<br><br>Egy korben a kovetkezo dolgokat lehet tenni: mezon levo dolgokat felvenni/ megtanulni, felso menuben levo dolgokat hasznalni. " +
+										"Lehet kattintani egy agensre, majd egy virologusra, aki ezaltal meg fog kenodni, hacsak nincs valamije, ami megvedeni."+
+										" Fontos, hogy minden korben csak egyszer lehet mezot valtani, a kor veget az EndTurn gombbal lehet jelezni. "+
+										"<br>A rozsaszin mezok a szomszedos mezok, atlepeshez ra kell kattintani. (Egy kis segitseg az atlathatosaghoz: ST=storage, SH=shelter, F=(normal) field, L=lab, T=trap, de ezt nem tudni, mert vakok a virologusok.)" +
+										"<br>Ha medveve valtozol, akkor is lehet felszedni felszereleseket, de csak azert, hogy elvedd masok elol, hasznalni nem tudod. " +
+										"Medvenel is kell szomszedos mezore kattintani, ha el szeretnel lepni, azonban mindegy melyikre kattintasz, veletlenszeruen fog valamelyikre lepni." +
+										"(Tancvirus hatasa alatt szinten.)" +
+										"<br><br>Az ikonok: <br> feherkopenyes ember: virologus <br>medve: medveve valt virologus <br>kemcsovek: amino es nukleotid" +
+										"<br>zsak/kopeny/kesztyu/balta: felszerelesek <br>DNS: genetikai kod<br><br>" +
+										"Ha a listadban felul rakattintasz egy felszerelesre, azt ledobod a mezore. " +
+										"Amennyiben GenCode-ra kattintasz, olyan agenst keszul (ha van eleg amino/nukleotid), es ez megjelenik az agensek menupont alatt." +
+										"agensre kattintva azt hasznalhatod valakin. " +
+										"Fejszevel csak medvet lehet olni, mert a virologusok aranyosak es nem olik egymast, max megbenitjak a masikat.");
 				dialog.add(lab);
 				dialog.setSize(540, 550);
 				dialog.setVisible(true);
