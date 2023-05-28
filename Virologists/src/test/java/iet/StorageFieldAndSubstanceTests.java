@@ -64,4 +64,14 @@ public class StorageFieldAndSubstanceTests {
             assertEquals(10, storage.getNucleotid());
             assertEquals(10, storageVirologist.getNucleotid());
         }
+
+        @Test
+        void PickUpSubstanceWithBagTest() {
+            Equipment bag = new Bag(storageVirologist);
+            storageVirologist.AddEquipment(bag);
+            storageVirologist.TakeNucleotide();
+
+            assertEquals(5, storage.getNucleotid());
+            assertEquals(15, storageVirologist.getNucleotid());
+        }
 }
