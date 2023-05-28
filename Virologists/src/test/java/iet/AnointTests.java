@@ -74,5 +74,19 @@ public class AnointTests {
 
     }
 
+    @Test
+    public void AnointExpiresTest() {
+        virologist.setAnointedBehaviour(new TakeAnoint());
+        Virologist tempVir = new Virologist(game,field);
+        DancerAgent dancerAgent = new DancerAgent();
+        tempVir.Anoint(virologist,dancerAgent);
+
+        virologist.getGame().getTimer().Tick();
+        virologist.getGame().getTimer().Tick();
+        virologist.getGame().getTimer().Tick();
+
+        assertFalse(virologist.getEffects().contains(dancerAgent));
+    }
+
 
 }
