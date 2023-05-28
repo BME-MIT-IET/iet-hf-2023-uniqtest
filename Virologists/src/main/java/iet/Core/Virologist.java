@@ -338,15 +338,15 @@ public class Virologist implements Serializable {
      * Hozzaadja a parameterkent kapott effektet az effektek tarolojaba, valamint aktivalja.
      * @param e Az effekttel rendelkezo dolog.
      */
-    public void AddEffect(Effect e) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
-    	effects.add(e);
-    	e.Activate(this);
-    }
+	public void AddEffect(Effect e) {
+		if (!effects.contains(e)) {
+			effects.add(e);
+			e.Activate(this);
+		}
+	}
 
-    /** 
+
+	/**
      * Agens vagy felszereles hatasanak megszunese a virologuson.
      * @param e Hatas, ami megszunik a virologuson.
      */
