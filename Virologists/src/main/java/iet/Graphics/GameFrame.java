@@ -12,7 +12,7 @@ import main.java.iet.Core.Game;
 public class GameFrame extends JFrame {
 	
 	JInfoPanel infoPanel;
-	JMenuBar menuBar;
+	JMenuBar jMenuBar;
 	JField field;
 	Game game;
 	
@@ -23,15 +23,15 @@ public class GameFrame extends JFrame {
      */
     public GameFrame(Game game) {
     	super("Vilagtalan virologusok");
-    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setSize(1000, 600);
 		setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		this.game = game;
 		infoPanel=new JInfoPanel();
-		menuBar=new OurJMenuBar();
+		jMenuBar =new OurJMenuBar();
 		field=new JField(game.getActiveVirologist().getField());
-		setJMenuBar(menuBar);
+		setJMenuBar(jMenuBar);
 		add(infoPanel,BorderLayout.LINE_END);
 		add(field,BorderLayout.CENTER);
 		this.setVisible(true);

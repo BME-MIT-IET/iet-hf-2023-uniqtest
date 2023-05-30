@@ -12,8 +12,6 @@ public class ParalyzingGencode extends Gencode {
      * Default constructor
      */
     public ParalyzingGencode() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setAminoCost(5);
     	setNucleotidCost(6);
        	setName("ParalyzingGencode");
@@ -25,14 +23,11 @@ public class ParalyzingGencode extends Gencode {
      * @return benulas agens
      */
     public ParalyzingAgent Craft(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
     	if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
         	v.setAmino(v.getAmino()-aminoCost);
         	v.setNucleotid(v.getNucleotid()-nucleotidCost);
-    		ParalyzingAgent pa = new ParalyzingAgent();
-    		return pa;
+			return new ParalyzingAgent();
     	}
     	
     	

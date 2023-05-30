@@ -24,14 +24,20 @@ import main.java.iet.VirologistBehaviours.Normal;
 public class GameTestInterfaceCommandFunction {
 private Game game;
 	private SecureRandom random = new SecureRandom();
+	private static final String PARAMETER_NUMBER_PROBLEM = "parameter number problem"; 
+	private static final String PARALYZING = "paralyzing"; 
+	private static final String DANCER = "dancer"; 
+	private static final String RESISTANCE = "resistance"; 
+	private static final String ALZHEIMER = "alzheimer"; 
+	private static final String GLOVE = "glove"; 
 	
 	/**
 	 *betolt egy megadott fajlt, egy elore keszitett jatekteret
 	 */
-	public void LoadMap() {
+	public void loadMap() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 2) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		game = Serializer.deserialize(params.get(1));
@@ -40,10 +46,10 @@ private Game game;
 	/**
 	 *elmenti a jatek eppeni allasat
 	 */
-	public void Save() {
+	public void save() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 2) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		Serializer.serialize(game,params.get(1));
@@ -56,7 +62,7 @@ private Game game;
 	/**
 	 *uj jatekot indit, nullaz mindent, semmi nincs a palyan
 	 */
-	public void Init() {
+	public void init() {
 		ArrayList<Field> fields = new ArrayList<Field>();
 		Game g = new Game(0);
 		g.getFields().addAll(fields);
@@ -66,10 +72,10 @@ private Game game;
 	/**
 	 *adott tipusu es ID-ju mezo letrehozasa es palyahoz adasa
 	 */
-	public void Field() {
+	public void field() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 3) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (fieldIdIsExist(params.get(2))) {
@@ -95,7 +101,7 @@ private Game game;
 			f1 = new TrapField();
 			break;
 		default:
-			parameterProblem("parameter value problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		f1.setId(params.get(2));
@@ -121,10 +127,10 @@ private Game game;
 	/**
 	 * 2 megadott ID-ju mezot szomszedokka tesz (belerakja egymas szomszedlistajaba)
 	 */
-	public void Neighbours() {
+	public void neighbours() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 3) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (!Objects.equals(params.get(1), params.get(2))) {
@@ -143,7 +149,7 @@ private Game game;
 		}
 	}
 	
-	public void Neighbours2(String f1, String f2) {
+	public void neighbours2(String f1, String f2) {
 		
 		ArrayList<Field> fields = game.getFields();
 		for(int i=0; i<fields.size(); ++i){
@@ -163,10 +169,10 @@ private Game game;
 	/**
 	 * adott tipusu GenCode-t rak adott ID-ju mezore
 	 */
-	public void SetGencode() {
+	public void setGencode() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 3) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (fieldIdIsExist(params.get(2))) {
@@ -178,20 +184,20 @@ private Game game;
 					
 					String gencodeType = params.get(1); 
 					switch (gencodeType) {
-					case "paralyzing":
+					case PARALYZING:
 						g = new ParalyzingGencode();
 						break;
-					case "dancer":
+					case DANCER:
 						g = new DancerGencode();
 						break;
-					case "resistance":
+					case RESISTANCE:
 						g = new ResistanceGencode();
 						break;
-					case "alzheimer":
+					case ALZHEIMER:
 						g = new AlzheimerGencode();
 						break;
 					default:
-						parameterProblem("parameter value problem");
+						parameterProblem(PARAMETER_NUMBER_PROBLEM);
 						return;
 					}
 					fields.get(i).setGencode(g);
@@ -211,7 +217,7 @@ private Game game;
 	/**
 	 * kilistaz mindent, ami a palyan van: mezok ID-jat, mezok szomszedait, virologusokat, es a virologusoknal levo osszes dolgot
 	 */
-	public void ViewGame() {
+	public void viewGame() {
 		ArrayList<Field> fields = game.getFields();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -252,8 +258,8 @@ private Game game;
 				System.out.printf(fields.get(i).getGencode().getType() + " ");
 			}
 			
-			if(!(fields.get(i).getAmino()==0 && fields.get(i).getNucleotid()==0)) {
-				System.out.printf(fields.get(i).getAmino() + " darab amino " + fields.get(i).getNucleotid() + " darab nukleotid");
+			if(!(fields.get(i).getAllAmino()==0 && fields.get(i).getAllNucleotid()==0)) {
+				System.out.printf(fields.get(i).getAllAmino() + " darab amino " + fields.get(i).getAllNucleotid() + " darab nukleotid");
 			}
 			System.out.println();
 		}
@@ -304,10 +310,10 @@ private Game game;
 	/**
 	 * kilistazza a virologus allapotat, azaz hogy mik vannak nala es milyen effect-ek vannak rajta
 	 */
-	public void VirologistState() {
+	public void virologistState() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 2) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		ArrayList<Virologist> virologists = game.getVirologists();
@@ -359,10 +365,10 @@ private Game game;
 	/**
 	 * adott Id-ju, uj virologust adott ID-ju mezore tesz
 	 */
-	public void SetVirologist() {
+	public void setVirologist() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 3) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (virologistIdIsExist(params.get(1))) {
@@ -379,10 +385,6 @@ private Game game;
 			if(fields.get(i).getId().equals(params.get(2))) {
 				Virologist newbie = new Virologist(game, fields.get(i));
 				newbie.setId(params.get(1));
-				/*
-				game.AddVirologist(newbie);
-				fields.get(i).AddVirologist(newbie);
-				*/		
 			}
 		}
 	}
@@ -403,10 +405,10 @@ private Game game;
 	/**
 	 * beallitja a virologus allapotat (normal,paralyzed,bear)
 	 */
-	public void SetVirState() {
+	public void setVirState() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 3) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (!virologistIdIsExist(params.get(1))) {
@@ -432,7 +434,7 @@ private Game game;
 				case "bear":
 					virologists.get(i).UseAnointed(virologists.get(i), new BearAgent());
 					break;
-				case "dancer":
+				case DANCER:
 					virologists.get(i).UseAnointed(virologists.get(i), new DancerAgent());
 					break;
 				default:
@@ -448,11 +450,11 @@ private Game game;
 	/**
 	 * a virologus megoli a medveve valt masik virologust
 	 */
-	public void Kill() {
+	public void kill() {
 		ArrayList<String> params = Interface.GetTheParams();
 		
 		if (params.size() < 3) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (!virologistIdIsExist(params.get(1))) {
@@ -490,10 +492,10 @@ private Game game;
 	/**
 	 * a virologus leptetese a mezokon
 	 */
-	public void Move() {
+	public void move() {
 		ArrayList<String> params = Interface.GetTheParams();
 		if (params.size() < 4) {
-			parameterProblem("parameter number problem");
+			parameterProblem(PARAMETER_NUMBER_PROBLEM);
 			return;
 		}
 		if (!virologistIdIsExist(params.get(1))) {
@@ -540,7 +542,7 @@ private Game game;
 	/**
 	 * megtanul egy genetikai kodot a virologus
 	 */
-	public void LearnGencode() {
+	public void learnGencode() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -559,7 +561,7 @@ private Game game;
 	/**
 	 * agenst keszit a virologus a genetikai kodbol
 	 */
-	public void CraftAgent() {
+	public void craftAgent() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -569,16 +571,16 @@ private Game game;
 				Gencode[] codes = gencodes.toArray(new Gencode[gencodes.size()]);
 				if (codes != null){
 					 for (int j = 0; j < codes.length; ++j){
-						if (params.get(1).equals("paralyzing") && codes[j].getType().equals("parCode")) {
+						if (params.get(1).equals(PARALYZING) && codes[j].getType().equals("parCode")) {
 							virologists.get(i).CraftAgent(codes[j]);
 						}
-						else if (params.get(1).equals("alzheimer") && codes[j].getType().equals("alzCode")) {
+						else if (params.get(1).equals(ALZHEIMER) && codes[j].getType().equals("alzCode")) {
 							virologists.get(i).CraftAgent(codes[j]);
 						}
-						else if (params.get(1).equals("resistance") && codes[j].getType().equals("resCode")) {
+						else if (params.get(1).equals(RESISTANCE) && codes[j].getType().equals("resCode")) {
 							virologists.get(i).CraftAgent(codes[j]);
 						}
-						else if (params.get(1).equals("dancer") && codes[j].getType().equals("danCode")) {
+						else if (params.get(1).equals(DANCER) && codes[j].getType().equals("danCode")) {
 							virologists.get(i).CraftAgent(codes[j]);
 						}
 					 }
@@ -591,7 +593,7 @@ private Game game;
 	/**
 	 * egy virologus megtamadja a masik virologust agenskenessel
 	 */
-	public void UseAgent() {
+	public void useAgent() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		Virologist from = null;
@@ -609,22 +611,22 @@ private Game game;
 						
 						
 							for(Agent agent : agents){
-								if (params.get(1).equals("paralyzing") && agent.getId().equals("ParAg")) {
+								if (params.get(1).equals(PARALYZING) && agent.getId().equals("ParAg")) {
 									from = virologists.get(i);
 									to = standsHereVirologists.get(j);
 									with = agent;
 								}
-								else if (params.get(1).equals("alzheimer") && agent.getId().equals("AlzAg")) {
+								else if (params.get(1).equals(ALZHEIMER) && agent.getId().equals("AlzAg")) {
 									from = virologists.get(i);
 									to = standsHereVirologists.get(j);
 									with = agent;
 								}
-								else if (params.get(1).equals("resistance") && agent.getId().equals("ResAg")) {
+								else if (params.get(1).equals(RESISTANCE) && agent.getId().equals("ResAg")) {
 									from = virologists.get(i);
 									to = standsHereVirologists.get(j);
 									with = agent;
 								}
-								else if (params.get(1).equals("dancer") && agent.getId().equals("DanAg")) {
+								else if (params.get(1).equals(DANCER) && agent.getId().equals("DanAg")) {
 									from = virologists.get(i);
 									to = standsHereVirologists.get(j);
 									with = agent;
@@ -643,9 +645,8 @@ private Game game;
 	/**
 	 * adott virologus felvesz egy felszerelest a field-rol
 	 */
-	public void TakeEquipment() {
+	public void takeEquipment() {
 		ArrayList<String> params = Interface.GetTheParams();
-		ArrayList<Field> fields = game.getFields();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		for(int i=0; i<virologists.size(); ++i){
 			if(virologists.get(i).getId().equals(params.get(2))) {
@@ -660,14 +661,12 @@ private Game game;
 				}
 			}
 		}
-		
-		
 	}
 	
 	/**
 	 * megadott virologustol eltavolit egy felszerelest, es a mezore dobja, amin all
 	 */
-	public void DropEquipment() {
+	public void dropEquipment() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		for(int i=0; i<virologists.size(); ++i){
@@ -682,22 +681,19 @@ private Game game;
 				}
 			}
 		}
-		
-		
-		
 	}
 	
 	/**
 	 * adott tipusu felszerelest rak a megadott ID-ju mezore
 	 */
-	public void SetEquipment() {
+	public void setEquipment() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Field> fields = game.getFields();
 		
 		for(int i=0; i<fields.size(); ++i){
 			if(fields.get(i).getId().equals(params.get(3))) {
 				Equipment e;
-				if(params.get(1).equals("glove")) e = new Glove(null);
+				if(params.get(1).equals(GLOVE)) e = new Glove(null);
 				else if(params.get(1).equals("bag")) e = new Bag(null);
 				else if(params.get(1).equals("axe")) e = new Axe(null);
 				else e = new Cape(null);
@@ -709,13 +705,13 @@ private Game game;
 		
 	}
 	
-	public void SetEquipment2(String kind, String field) {
+	public void setEquipment2(String kind, String field) {
 		ArrayList<Field> fields = game.getFields();
 		
 		for(int i=0; i<fields.size(); ++i){
 			if(fields.get(i).getId().equals(field)) {
 				Equipment e;
-				if(kind.equals("glove")) e = new Glove(null);
+				if(kind.equals(GLOVE)) e = new Glove(null);
 				else if(kind.equals("bag")) e = new Bag(null);
 				else if(kind.equals("axe")) e = new Axe(null);
 				else e = new Cape(null);
@@ -729,7 +725,7 @@ private Game game;
 	/**
 	 * a virologus ellop egy masik virologustol felszerelest
 	 */
-	public void StealEquipment() {
+	public void stealEquipment() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -758,7 +754,7 @@ private Game game;
 	/**
 	 * a virologus ellop egy masik virologustol anyagot
 	 */
-	public void StealSubstance() {
+	public void stealSubstance() {
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -779,7 +775,7 @@ private Game game;
 	/**
 	 * adott mennyisegu amino/nucleotide rak a megadott ID-ju mezore (storage)
 	 */
-	public void SetSubstance(){
+	public void setSubstance(){
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Field> fields = game.getFields();
 		
@@ -802,7 +798,7 @@ private Game game;
 	/**
 	 * kikapcsolja a nem determinisztikus kopenyt, vagy mindig ved, vagy sose, vagy vissza is lehet kapcsolni
 	 */
-	public void CapeProtection(){
+	public void capeProtection(){
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -826,7 +822,7 @@ private Game game;
 	/**
 	 * a virologus megadott tipusu anyagot vesz fel a mezorol
 	 */
-	public void TakeSubstance(){
+	public void takeSubstance(){
 		ArrayList<String> params = Interface.GetTheParams();
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
@@ -848,7 +844,7 @@ private Game game;
 	/**
 	 * map betolteset segiti
 	 */
-	public void Test_Init() {
+	public void testInit() {
 		ArrayList<Virologist> virologists = game.getVirologists();
 		
 		for (int i = 0; i < virologists.size(); ++i){
@@ -893,20 +889,12 @@ private Game game;
 	}
 	
 	/**
-	 * fajl problema eseten hivodik
-	 */
-	private void fileProblem() {
-		System.out.println("Fail: file problem. The file not exist.");
-	}
-	
-	/**
 	 * palyakeszito
 	 * @param numOfPlayers jatekosok szama
 	 * @param gam a jatek
 	 */
-	public void Main_Init(int numOfPlayers, Game gam) {
+	public void mainInit(int numOfPlayers, Game gam) {
 		game=gam;
-		//int numOfFields = 50;
 		//F0-F34 normal
 		for(int i=1; i<36; ++i) {
 			if(!(i==4 || i==5)) {
@@ -955,139 +943,139 @@ private Game game;
 		F4.setId("F4");
 		
 		
-		Neighbours2("ST1", "L1");
-		Neighbours2("ST1", "T1");
+		neighbours2("ST1", "L1");
+		neighbours2("ST1", "T1");
 		
-		Neighbours2("T1", "L1");
-		Neighbours2("T1", "F3");
-		Neighbours2("T1", "SH1");
+		neighbours2("T1", "L1");
+		neighbours2("T1", "F3");
+		neighbours2("T1", "SH1");
 
-		Neighbours2("L1", "F1");
+		neighbours2("L1", "F1");
 		
-		Neighbours2("F3", "F4");
-		Neighbours2("F3", "F5");
+		neighbours2("F3", "F4");
+		neighbours2("F3", "F5");
 		
-		Neighbours2("F4", "L2");
+		neighbours2("F4", "L2");
 		
 		
-		Neighbours2("L2", "F5");
-		Neighbours2("L2", "F6");
+		neighbours2("L2", "F5");
+		neighbours2("L2", "F6");
 		
-		Neighbours2("F6", "F8");
-		Neighbours2("F6", "ST2");
-		Neighbours2("F6", "F7");
+		neighbours2("F6", "F8");
+		neighbours2("F6", "ST2");
+		neighbours2("F6", "F7");
 		
-		Neighbours2("F7", "ST2");
+		neighbours2("F7", "ST2");
 		
-		Neighbours2("ST2", "F14");
+		neighbours2("ST2", "F14");
 		
-		Neighbours2("F5", "F8");
-		Neighbours2("F5", "SH1");
+		neighbours2("F5", "F8");
+		neighbours2("F5", "SH1");
 		
-		Neighbours2("SH1", "F2");
-		Neighbours2("SH1", "F9");
+		neighbours2("SH1", "F2");
+		neighbours2("SH1", "F9");
 		
-		Neighbours2("F9", "F10");
-		Neighbours2("F9", "F8");
+		neighbours2("F9", "F10");
+		neighbours2("F9", "F8");
 		
-		Neighbours2("F8", "F13");
+		neighbours2("F8", "F13");
 		
-		Neighbours2("F1", "F2");
-		Neighbours2("F1", "F11");
+		neighbours2("F1", "F2");
+		neighbours2("F1", "F11");
 		
-		Neighbours2("F2", "SH2");
+		neighbours2("F2", "SH2");
 		
-		Neighbours2("F11", "F12");
-		Neighbours2("F11", "F17");
+		neighbours2("F11", "F12");
+		neighbours2("F11", "F17");
 		
-		Neighbours2("F12", "F16");
+		neighbours2("F12", "F16");
 		
-		Neighbours2("SH2", "F10");
-		Neighbours2("SH2", "F17");
+		neighbours2("SH2", "F10");
+		neighbours2("SH2", "F17");
 		
-		Neighbours2("F10", "ST3");
+		neighbours2("F10", "ST3");
 		
-		Neighbours2("F16", "F17");
-		Neighbours2("F16", "SH4");
+		neighbours2("F16", "F17");
+		neighbours2("F16", "SH4");
 		
-		Neighbours2("SH4", "F17");
-		Neighbours2("SH4", "F24");
+		neighbours2("SH4", "F17");
+		neighbours2("SH4", "F24");
 		
-		Neighbours2("F17", "F21");
-		Neighbours2("F17", "ST4");
+		neighbours2("F17", "F21");
+		neighbours2("F17", "ST4");
 		
-		Neighbours2("F24", "L4");
-		Neighbours2("F24", "F25");
+		neighbours2("F24", "L4");
+		neighbours2("F24", "F25");
 		
-		Neighbours2("L4", "F25");
-		Neighbours2("L4", "F31");
+		neighbours2("L4", "F25");
+		neighbours2("L4", "F31");
 		
-		Neighbours2("F25", "F29");
-		Neighbours2("F25", "ST4");
+		neighbours2("F25", "F29");
+		neighbours2("F25", "ST4");
 		
-		Neighbours2("ST4", "F26");
+		neighbours2("ST4", "F26");
 		
-		Neighbours2("F35", "F31");
-		Neighbours2("F35", "SH5");
+		neighbours2("F35", "F31");
+		neighbours2("F35", "SH5");
 		
-		Neighbours2("F31", "F30");
+		neighbours2("F31", "F30");
 		
-		Neighbours2("F30", "F29");
-		Neighbours2("F30", "T2");
+		neighbours2("F30", "F29");
+		neighbours2("F30", "T2");
 		
-		Neighbours2("T2", "F27");
-		Neighbours2("T2", "F32");
+		neighbours2("T2", "F27");
+		neighbours2("T2", "F32");
 		
-		Neighbours2("F29", "F26");
+		neighbours2("F29", "F26");
 		
-		Neighbours2("F26", "F21");
-		Neighbours2("F26", "F27");
+		neighbours2("F26", "F21");
+		neighbours2("F26", "F27");
 		
-		Neighbours2("F27", "F28");
-		Neighbours2("F27", "F21");
+		neighbours2("F27", "F28");
+		neighbours2("F27", "F21");
 		
-		Neighbours2("F21", "F22");
-		Neighbours2("F21", "ST3");
+		neighbours2("F21", "F22");
+		neighbours2("F21", "ST3");
 		
-		Neighbours2("ST3", "F13");
-		Neighbours2("ST3", "F22");
+		neighbours2("ST3", "F13");
+		neighbours2("ST3", "F22");
 		
-		Neighbours2("F22", "F18");
+		neighbours2("F22", "F18");
 		
-		Neighbours2("F13", "F18");
-		Neighbours2("F13", "F14");
+		neighbours2("F13", "F18");
+		neighbours2("F13", "F14");
 		
-		Neighbours2("F14", "F15");
+		neighbours2("F14", "F15");
 		
-		Neighbours2("F15", "SH3");
-		Neighbours2("F15", "F20");
+		neighbours2("F15", "SH3");
+		neighbours2("F15", "F20");
 		
-		Neighbours2("SH3", "F19");
-		Neighbours2("SH3", "F18");
+		neighbours2("SH3", "F19");
+		neighbours2("SH3", "F18");
 		
-		Neighbours2("F18", "F19");
-		Neighbours2("F18", "L3");
+		neighbours2("F18", "F19");
+		neighbours2("F18", "L3");
 		
-		Neighbours2("L3", "F23");
-		Neighbours2("L3", "F28");
+		neighbours2("L3", "F23");
+		neighbours2("L3", "F28");
 		
-		Neighbours2("F19", "F23");
-		Neighbours2("F19", "F20");
+		neighbours2("F19", "F23");
+		neighbours2("F19", "F20");
 		
-		Neighbours2("F20", "F23");
+		neighbours2("F20", "F23");
 		
-		Neighbours2("F23", "F33");
-		Neighbours2("F23", "32");
+		neighbours2("F23", "F33");
+		neighbours2("F23", "32");
 		
-		Neighbours2("F28", "F32");
+		neighbours2("F28", "F32");
 		
-		Neighbours2("F32", "F34");
+		neighbours2("F32", "F34");
 		
-		Neighbours2("F34", "F33");
-		Neighbours2("F34", "ST5");
-		Neighbours2("F34", "SH5");
+		neighbours2("F34", "F33");
+		neighbours2("F34", "ST5");
+		neighbours2("F34", "SH5");
 		
-		Neighbours2("F33", "ST5");
+		neighbours2("F33", "ST5");
 		
 		
 		F5.setId("ST6");
@@ -1136,28 +1124,28 @@ private Game game;
 			}
 		}
 		
-		SetEquipment2("cape", "SH1");
-		SetEquipment2("glove", "SH1");
-		SetEquipment2("axe", "SH1");
-		SetEquipment2("bag", "SH1");
-		SetEquipment2("glove", "SH1");
-		SetEquipment2("axe", "SH2");
-		SetEquipment2("bag", "SH2");
+		setEquipment2("cape", "SH1");
+		setEquipment2(GLOVE, "SH1");
+		setEquipment2("axe", "SH1");
+		setEquipment2("bag", "SH1");
+		setEquipment2(GLOVE, "SH1");
+		setEquipment2("axe", "SH2");
+		setEquipment2("bag", "SH2");
 		
-		SetEquipment2("glove", "SH3");
-		SetEquipment2("cape", "SH3");
-		SetEquipment2("axe", "SH4");
-		SetEquipment2("bag", "SH4");
-		SetEquipment2("glove", "SH4");
-		SetEquipment2("cape", "SH4");
-		SetEquipment2("axe", "SH5");
-		SetEquipment2("bag", "SH5");
-		SetEquipment2("cape", "SH5");
-		SetEquipment2("bag", "SH5");
+		setEquipment2(GLOVE, "SH3");
+		setEquipment2("cape", "SH3");
+		setEquipment2("axe", "SH4");
+		setEquipment2("bag", "SH4");
+		setEquipment2(GLOVE, "SH4");
+		setEquipment2("cape", "SH4");
+		setEquipment2("axe", "SH5");
+		setEquipment2("bag", "SH5");
+		setEquipment2("cape", "SH5");
+		setEquipment2("bag", "SH5");
 		
-		SetEquipment2("bag", "SH6");
-		SetEquipment2("glove", "SH6");
-		SetEquipment2("cape", "SH6");
+		setEquipment2("bag", "SH6");
+		setEquipment2(GLOVE, "SH6");
+		setEquipment2("cape", "SH6");
 		
 	}
 	
@@ -1166,7 +1154,7 @@ private Game game;
 	 * @param numOfPlayers
 	 * @param g
 	 */
-	public void PlayerPlace(int numOfPlayers, Game g){ 
+	public void playerPlace(int numOfPlayers, Game g){
 		ArrayList<Field> fields = g.getFields();
 		for(int i=0; i< numOfPlayers; ++i){ 	
 			for(int j=0; j<fields.size(); ++j){

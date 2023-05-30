@@ -26,8 +26,8 @@ public class JSubstance extends JButton implements ActionListener{
     	this.sf = sf;
 		setBackground(Color.WHITE);
     	setIcon(new ImageIcon("icons/anyag.png"));
-    	this.setText("<html> amino: " + sf.getAmino() 
-    				+ "<br> nucleotid: " +sf.getNucleotid() + "<html>");
+    	this.setText("<html> amino: " + sf.getAllAmino()
+    				+ "<br> nucleotid: " +sf.getAllNucleotid() + "<html>");
     	setBorderPainted(false);
     }
 

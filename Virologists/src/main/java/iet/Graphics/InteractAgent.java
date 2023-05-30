@@ -14,7 +14,6 @@ import javax.swing.JLabel;
 import main.java.iet.Agents.Agent;
 import main.java.iet.Core.Game;
 import main.java.iet.Core.Virologist;
-import main.java.iet.Equipments.Equipment;
 
 
 public class InteractAgent implements ActionListener{
@@ -39,7 +38,7 @@ public class InteractAgent implements ActionListener{
         
         
         String[] s = options();
-        c = new JComboBox<String>(s);
+        c = new JComboBox<>(s);
         d.add(c);
         
         JButton b = new JButton("do it");

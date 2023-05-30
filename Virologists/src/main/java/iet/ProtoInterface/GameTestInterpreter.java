@@ -45,85 +45,85 @@ public class GameTestInterpreter {
 				exit = true;
 				break;
 			case "loadmap":
-				gameTestInterfaceCommandFunction.LoadMap();
+				gameTestInterfaceCommandFunction.loadMap();
 				break;
 			case "save":
-				gameTestInterfaceCommandFunction.Save();
+				gameTestInterfaceCommandFunction.save();
 				break;
 			case "init":
-				gameTestInterfaceCommandFunction.Init();
+				gameTestInterfaceCommandFunction.init();
 				break;
 			case "field":
-				gameTestInterfaceCommandFunction.Field();
+				gameTestInterfaceCommandFunction.field();
 				break;
 			case "neighbours":
-				gameTestInterfaceCommandFunction.Neighbours();
+				gameTestInterfaceCommandFunction.neighbours();
 				break;
 			case "setgencode":
-				gameTestInterfaceCommandFunction.SetGencode();
+				gameTestInterfaceCommandFunction.setGencode();
 				break;
 			case "stepall":
 				gameTestInterfaceCommandFunction.StepAll();
 				break;
 			case "viewgame":
-				gameTestInterfaceCommandFunction.ViewGame();
+				gameTestInterfaceCommandFunction.viewGame();
 				break;
 			case "virologiststate":
-				gameTestInterfaceCommandFunction.VirologistState();
+				gameTestInterfaceCommandFunction.virologistState();
 				break;
 			case "setvirologist":
-				gameTestInterfaceCommandFunction.SetVirologist();
+				gameTestInterfaceCommandFunction.setVirologist();
 				break;
 			case "setvirstate":
-				gameTestInterfaceCommandFunction.SetVirState();
+				gameTestInterfaceCommandFunction.setVirState();
 				break;
 			case "kill":
-				gameTestInterfaceCommandFunction.Kill();
+				gameTestInterfaceCommandFunction.kill();
 				break;
 			case "move":
-				gameTestInterfaceCommandFunction.Move();
+				gameTestInterfaceCommandFunction.move();
 				break;
 			case "learngencode":
-				gameTestInterfaceCommandFunction.LearnGencode();
+				gameTestInterfaceCommandFunction.learnGencode();
 				break;
 			case "craftagent":
-				gameTestInterfaceCommandFunction.CraftAgent();
+				gameTestInterfaceCommandFunction.craftAgent();
 				break;
 			case "useagent":
-				gameTestInterfaceCommandFunction.UseAgent();
+				gameTestInterfaceCommandFunction.useAgent();
 				break;
 			case "takeequipment":
-				gameTestInterfaceCommandFunction.TakeEquipment();
+				gameTestInterfaceCommandFunction.takeEquipment();
 				break;
 			case "dropequipment":
-				gameTestInterfaceCommandFunction.DropEquipment();
+				gameTestInterfaceCommandFunction.dropEquipment();
 				break;
 			case "setequipment":
-				gameTestInterfaceCommandFunction.SetEquipment();
+				gameTestInterfaceCommandFunction.setEquipment();
 				break;
 			case "stealequipment":
-				gameTestInterfaceCommandFunction.StealEquipment();
+				gameTestInterfaceCommandFunction.stealEquipment();
 				break;
 			case "stealsubstance":
-				gameTestInterfaceCommandFunction.StealSubstance();
+				gameTestInterfaceCommandFunction.stealSubstance();
 				break;
 			case "setsubstance":
-				gameTestInterfaceCommandFunction.SetSubstance();
+				gameTestInterfaceCommandFunction.setSubstance();
 				break;
 			case "capeprotection":
-				gameTestInterfaceCommandFunction.CapeProtection();
+				gameTestInterfaceCommandFunction.capeProtection();
 				break;
 			case "takesubstance":
-				gameTestInterfaceCommandFunction.TakeSubstance();
+				gameTestInterfaceCommandFunction.takeSubstance();
 				break;
 			case "help":
 				Help();
 				break;
 			case "testmapinit":
-				gameTestInterfaceCommandFunction.Test_Init();
+				gameTestInterfaceCommandFunction.testInit();
 				break;
 			case "szipi":
-				gameTestInterfaceCommandFunction.Main_Init(3, new Game(0));
+				gameTestInterfaceCommandFunction.mainInit(3, new Game(0));
 				break;
 			default:
 				Fail();

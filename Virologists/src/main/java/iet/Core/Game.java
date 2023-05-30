@@ -40,7 +40,7 @@ public final class Game implements Serializable {
     /**
      * A virologusokat tartalmazo lista.
      */
-    private ArrayList<Virologist> virologists = new ArrayList<Virologist>();
+    private ArrayList<Virologist> virologists = new ArrayList<>();
 
     /**
      * A jatekhoz tartozo idozito.
@@ -50,7 +50,7 @@ public final class Game implements Serializable {
     /**
      * A jatekpalya mezoi.
      */
-    private ArrayList<Field> fields = new ArrayList<Field>();
+    private ArrayList<Field> fields = new ArrayList<>();
     
     /**
      * Eppen soron levo Virologist

@@ -20,18 +20,14 @@ public class StorageField extends Field {
     public StorageField() {
     	amino=30;
     	nucleotid=30;
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     }
 
     /**
      * A mezon levo amino felvetele, i-t tud felvenni
 	 * @return amino
 	 */
-	public int GetAmino(int i) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+	public int getAmino(int i) {
+
 		if (i<=amino) {
 			setAmino(amino-i);
 			return i;
@@ -47,17 +43,15 @@ public class StorageField extends Field {
 	 * @param amino Beallitando amino mennyiseg.
 	 */
 	public void setAmino(int amino) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
 		this.amino = amino;
 	}
 	
-	public int getAmino() {
+	public int getAllAmino() {
     	return amino;
 	}
 	
-	public int getNucleotid() {
+	public int getAllNucleotid() {
     	return nucleotid;
 	}
 
@@ -66,10 +60,8 @@ public class StorageField extends Field {
 	 * A mezon levo nukleotid felvetele.
 	 * @return nucleotid
 	 */
-	public int GetNucleotid(int m) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+	public int getNucleotid(int m) {
+
 		if (m<=nucleotid) {
 			setNucleotid(nucleotid-m);
 			return m;
@@ -85,9 +77,7 @@ public class StorageField extends Field {
 	 * @param amino Beallitando nukleotid mennyiseg.
 	 */
 	public void setNucleotid(int nucleotid) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
 		this.nucleotid = nucleotid;
 	}
 
@@ -105,7 +95,7 @@ public class StorageField extends Field {
      * minden mezon levo dolog listajaval ter vissza
      */
     public ArrayList<JButton> getJItems() {
-		ArrayList<JButton> items = new ArrayList<JButton>();
+		ArrayList<JButton> items = new ArrayList<>();
 		
 		for (Virologist v : virologists) {
 			items.add(v.getView());

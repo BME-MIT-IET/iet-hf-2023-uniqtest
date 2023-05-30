@@ -49,7 +49,7 @@ public class LaboratoryField extends Field {
      * minden mezon levo dolog listajaval ter vissza
      */
     public ArrayList<JButton> getJItems() {
-		ArrayList<JButton> items = new ArrayList<JButton>();
+		ArrayList<JButton> items = new ArrayList<>();
 		for (Virologist v : virologists) {
 			items.add(v.getView());
 			if (v==Game.theGame.getActiveVirologist()) {
