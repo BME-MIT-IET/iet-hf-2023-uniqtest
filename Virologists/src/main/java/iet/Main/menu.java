@@ -15,7 +15,9 @@ public class menu {
 		StartMenu m = new StartMenu();
 		while (!m.isReady()) {
 			try {Thread.sleep(2000);}
-			catch (InterruptedException e) {}
+			catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
 		}
 		
 		Game game = m.getGame();

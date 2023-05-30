@@ -12,6 +12,7 @@ import main.java.iet.Graphics.JVirologist;
  *
  */
 public class BearMove extends MoveBehaviour {
+	private Random random = new Random();
 
 	/**
      * Default constructor
@@ -27,7 +28,6 @@ public class BearMove extends MoveBehaviour {
 	public void Move(int i, Virologist v) {
         Field actualField = v.getField();
         int neighboursNumber = actualField.GetNeighbourFieldNum();        
-        Random random = new Random();
         Field nextField = actualField.GetNeighbour(random.nextInt(neighboursNumber));
         actualField.RemoveVirologist(v);
         nextField.AddVirologist(v);

@@ -14,9 +14,6 @@ public class MightBlockAnoint extends AnointedBehaviour {
      * A konstruktor beallitja a viselkedesi forma prioritasat
      */
     public MightBlockAnoint() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	setPriority(3);
     }
 
@@ -27,13 +24,10 @@ public class MightBlockAnoint extends AnointedBehaviour {
      * @param with Amivel felkenik
      */
     public boolean Anointed(Virologist by, Virologist to, Agent with) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	double r;
     	if(det==1) r = 0;
     	else if(det==-1) r = 1;
-    	else r = new Random().nextDouble();
+    	else r = rand.nextDouble();
     	 
     	if( r <= 0.832 ) {
     			return false;
@@ -52,5 +46,5 @@ public class MightBlockAnoint extends AnointedBehaviour {
 	}
     
     private int det = 0;
-
+	private Random rand = new Random();
 }

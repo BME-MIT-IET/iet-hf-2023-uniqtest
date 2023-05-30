@@ -85,11 +85,11 @@ public class StartMenu extends JFrame implements ActionListener {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
 				game = new Serializer().deserialize(file.getAbsolutePath());
-				game.theGame.SetTheGame(game);
 				if (game == null) {
 					JOptionPane.showMessageDialog(this, "File is not valid");
 					System.exit(0);
 				}
+				game.theGame.SetTheGame(game);
 			}
 		}
 		ready=true;

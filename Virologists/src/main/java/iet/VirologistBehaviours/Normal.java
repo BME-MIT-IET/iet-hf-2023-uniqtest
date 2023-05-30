@@ -59,6 +59,7 @@ public class Normal implements VirologistBehaviour, Serializable {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+				Thread.currentThread().interrupt();
 			}
     	}
     	v.getGame().getGF().getInfoPanel().remove(eb);
