@@ -12,7 +12,8 @@ import main.java.iet.Core.Virologist;
 import main.java.iet.Gencodes.Gencode;
 
 public class OurActionListener  implements ActionListener {
-	
+	private static final String ANOINT_VIROLOGIST = "Anoint virologist";
+
 	public OurActionListener(Virologist vi) {
 		virologist = vi;
 	}
@@ -48,23 +49,22 @@ public class OurActionListener  implements ActionListener {
         }
         
 		//AGENTS
-        InteractAgent interactAgent;
         JFrame frame = Game.theGame.getGF();
         if(Objects.equals(e.getActionCommand(), "AlzheimerAgent")) {
         	for (Agent a : virologist.getAgents())
-        		if (a.getName().equals("AlzheimerAgent")) interactAgent = new InteractAgent(frame, "Anoint virologist", a);  //ide kene egy dialogusablak, hogy kit kenunk
+        		if (a.getName().equals("AlzheimerAgent")) new InteractAgent(frame, ANOINT_VIROLOGIST, a);  //ide kene egy dialogusablak, hogy kit kenunk
         }
         if(Objects.equals(e.getActionCommand(), "DancerAgent")) {
         	for (Agent a : virologist.getAgents())
-        		if (a.getName().equals("DancerAgent")) interactAgent = new InteractAgent(frame, "Anoint virologist", a);;  //ide kene egy dialogusablak, hogy kit kenunk
+        		if (a.getName().equals("DancerAgent")) new InteractAgent(frame, ANOINT_VIROLOGIST, a);  //ide kene egy dialogusablak, hogy kit kenunk
         }
         if(Objects.equals(e.getActionCommand(), "ParalyzingAgent")) {
         	for (Agent a : virologist.getAgents())
-        		if (a.getName().equals("ParalyzingAgent")) interactAgent = new InteractAgent(frame, "Anoint virologist", a);;  //ide kene egy dialogusablak, hogy kit kenunk
+        		if (a.getName().equals("ParalyzingAgent")) new InteractAgent(frame, ANOINT_VIROLOGIST, a);  //ide kene egy dialogusablak, hogy kit kenunk
         }
         if(Objects.equals(e.getActionCommand(), "ResistanceAgent")) {
         	for (Agent a : virologist.getAgents())
-        		if (a.getName().equals("ResistanceAgent")) interactAgent = new InteractAgent(frame, "Anoint virologist", a);;  //ide kene egy dialogusablak, hogy kit kenunk
+        		if (a.getName().equals("ResistanceAgent")) new InteractAgent(frame, ANOINT_VIROLOGIST, a);  //ide kene egy dialogusablak, hogy kit kenunk
         }
         
         //GENCODES

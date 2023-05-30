@@ -12,6 +12,7 @@ public class Timer implements Serializable {
      * Default constructor
      */
     public Timer() {
+        /*  */
     }
 
     /**
@@ -29,13 +30,15 @@ public class Timer implements Serializable {
      * Ha az elettartamuk lejar (egyenlo nulla) akkor eltavolitjuk oket a listabol.
      */
     public void Tick() {
-    	ArrayList<Steppable> temp = new ArrayList<Steppable>();
+    	ArrayList<Steppable> temp = new ArrayList<>();
         
     	for (int i = 0; i < steppables.size(); i++) {
         	int duration = steppables.get(i).Step();
         	if (duration == 0) temp.add(steppables.get(i));
         }
-    	if (temp.size() == 0) return;
+    	if (temp.isEmpty()) {
+            return;
+        }
         for (Steppable z : temp) {
         	this.RemoveSteppable(z);
         }

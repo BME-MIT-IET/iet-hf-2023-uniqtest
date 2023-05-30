@@ -25,6 +25,7 @@ public class BearMove extends MoveBehaviour {
      * @param i A szomszedos mezo sorszamat megado szam.
      * @param v A virologus, aki lep.
      */
+	@Override
 	public void Move(int i, Virologist v) {
         Field actualField = v.getField();
         int neighboursNumber = actualField.GetNeighbourFieldNum();        
@@ -49,12 +50,14 @@ public class BearMove extends MoveBehaviour {
 	 * @param v1 gyilkolo
 	 * @param v2 gyilkolando
 	 */
-	public boolean Die(Virologist v1, Virologist v2) { 
+	@Override
+	public boolean Die(Virologist v1, Virologist v2) {
 		v2.getGame().getVirologists().remove(v2);
 		v2.getField().getVirologists().remove(v2);
 		return true;
 	}
-	
+
+	@Override
 	/**
 	 * medve gombjaval ter vissza
 	 */

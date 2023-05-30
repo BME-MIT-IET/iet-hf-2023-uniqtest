@@ -75,8 +75,8 @@ public class Serializer {
 						 fw.write(fields.get(i).getGencode().getType() + " ");
 					 }
 
-					 if(!(fields.get(i).getAmino()==0 && fields.get(i).getNucleotid()==0)) {
-						 fw.write(fields.get(i).getAmino() + " darab amino " + fields.get(i).getNucleotid() + " darab nukleotid");
+					 if(!(fields.get(i).getAllAmino()==0 && fields.get(i).getAllNucleotid()==0)) {
+						 fw.write(fields.get(i).getAllAmino() + " darab amino " + fields.get(i).getAllNucleotid() + " darab nukleotid");
 					 }
 					 fw.write("\n");
 				 }

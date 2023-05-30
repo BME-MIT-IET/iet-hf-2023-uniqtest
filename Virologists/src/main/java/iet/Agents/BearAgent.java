@@ -26,7 +26,7 @@ public class BearAgent extends Agent {
      * Beallitja a parameterkent kapott virologus lepesi viselkedeset normalra
      * @param v a virologus, akin aktivalodik a hatasa
      */
-    public void Deactivate(Virologist v) {  }
+    public void Deactivate(Virologist v) { /* Medvere nem vonatkozik */ }
     
     public String getId() {
  		return "BearAg";

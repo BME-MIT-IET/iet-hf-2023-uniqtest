@@ -23,14 +23,7 @@ public abstract class Agent implements Effect, Steppable, Serializable {
      * ideiglenes id hogy a proton barmit be lehessen kezzel allitani
      */
      String id;
-     
-     /**
- 	 * getter
- 	 * @return effectId
- 	 */
- 	public abstract String getId();
- 	
- 	
+     	 	
     private String name;
     
     /**

@@ -23,6 +23,7 @@ public class DanceMove extends MoveBehaviour {
      * @param i A szomszedos mezo sorszamat megado szam.
      * @param v A virologus, aki lep.
      */
+    @Override
     public void Move(int i, Virologist v) {
         Field actualField = v.getField();
         int neighboursNumber = actualField.GetNeighbourFieldNum();        

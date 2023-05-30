@@ -94,7 +94,7 @@ public class Virologist implements Serializable {
     /**
      * A virologus altal megtanult genetikai kodok listaja.
      */
-    private HashSet<Gencode> gencodes = new HashSet<Gencode>();
+    private HashSet<Gencode> gencodes = new HashSet<>();
 
     
 
@@ -107,7 +107,7 @@ public class Virologist implements Serializable {
      * A virologus altal keszitett, es meg nem hasznalt agensek.
      * !!Max4!!
      */
-    private ArrayList<Agent> agents = new ArrayList<Agent>();
+    private ArrayList<Agent> agents = new ArrayList<>();
 
     /**
      * A virologus agenskenesnel torteno viselkedese (kivedi, engedi, visszadobja).
@@ -181,14 +181,15 @@ public class Virologist implements Serializable {
      * @param v A virologus, akitol lopunk.
      */
     public void StealSubstance(Virologist v) {
-    	int aSteal, nSteal;
+    	int aSteal;
+		int nSteal;
     	if(3 <= maxSubstance-amino) aSteal = 3;
     	else aSteal = maxSubstance - amino;
     	if(3 <= maxSubstance-nucleotid) 
     		nSteal = 3;
     	else nSteal = maxSubstance - nucleotid;
     	
-    	int newAmNu[] = v.UseRemoveSubstance(aSteal, nSteal);
+    	int[] newAmNu = v.UseRemoveSubstance(aSteal, nSteal);
     	this.setAmino(amino+newAmNu[0]);
     	this.setNucleotid(nucleotid+newAmNu[1]);
         game.RefreshFrame();
@@ -269,8 +270,8 @@ public class Virologist implements Serializable {
      * A virologus felvesz anyagot egy mezorol.
      */
     public void TakeSubstance() {
-        setAmino(field.GetAmino(maxSubstance-amino)+amino);
-        setNucleotid(field.GetNucleotid(maxSubstance-nucleotid)+nucleotid);
+        setAmino(field.getAmino(maxSubstance-amino)+amino);
+        setNucleotid(field.getNucleotid(maxSubstance-nucleotid)+nucleotid);
         game.RefreshFrame();
     }
     
@@ -278,14 +279,14 @@ public class Virologist implements Serializable {
      * A virologus felvesz aminot egy mezorol.
      */
     public void TakeAmino() {
-        setAmino(field.GetAmino(maxSubstance-amino)+amino);
+        setAmino(field.getAmino(maxSubstance-amino)+amino);
     }
     
     /**
      * A virologus felvesz nukleotidot egy mezorol.
      */
     public void TakeNucleotide() {
-        setNucleotid(field.GetNucleotid(maxSubstance-nucleotid)+nucleotid);
+        setNucleotid(field.getNucleotid(maxSubstance-nucleotid)+nucleotid);
     }
 
     /**
