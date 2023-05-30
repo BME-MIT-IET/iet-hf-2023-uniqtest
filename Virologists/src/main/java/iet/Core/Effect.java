@@ -1,9 +1,11 @@
 package main.java.iet.Core;
 
+import java.io.Serializable;
+
 /**
  * Az interfesz feladata osszegyujteni az aktivalhato es deaktivalhato dolgokat
  */
-public interface Effect {
+public interface Effect extends Serializable {
 	
 	
     

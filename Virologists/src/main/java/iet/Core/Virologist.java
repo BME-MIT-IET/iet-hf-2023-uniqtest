@@ -317,10 +317,8 @@ public class Virologist implements Serializable {
         int aBefore = amino;
         int nBefore = nucleotid;
         virologistBehaviour.RemoveSubstance(a, n, this);
-        
-        int missingSubst[]= {aBefore-amino, nBefore-nucleotid};
-        return missingSubst;
-        
+
+		return new int[]{aBefore-amino, nBefore-nucleotid};
     }
 
     /**

@@ -38,7 +38,7 @@ public class InteractAgent implements ActionListener{
         d.setLocation(200, 200);
         
         
-        String s[] = options();
+        String[] s = options();
         c = new JComboBox<String>(s);
         d.add(c);
         
@@ -82,7 +82,6 @@ public class InteractAgent implements ActionListener{
 		if (c.getItemCount() > 0) {
 			String selectedItem = (String)c.getSelectedItem();
 			int index = Integer.parseInt((selectedItem.split(" ", 3))[1]);
-			Equipment equipment = null;
 			ArrayList<Virologist> allVirologist = Game.theGame.getVirologists();
 			Virologist selectedVirologist = allVirologist.get(index);
 			Game.theGame.getActiveVirologist().Anoint(selectedVirologist, selectedAgent);
