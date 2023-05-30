@@ -22,6 +22,7 @@ public class AlzheimerGencode extends Gencode {
      * @param v Virologus, aki kesziti.
      * @return alzheimer agens
      */
+    @Override
     public AlzheimerAgent Craft(Virologist v) {
         if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
         	v.setAmino(v.getAmino()-aminoCost);
@@ -32,7 +33,8 @@ public class AlzheimerGencode extends Gencode {
         	
         return null;
     }
-    
+
+    @Override
     public String getType() {
 		return "alzCode";
 	}

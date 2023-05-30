@@ -66,8 +66,7 @@ public class StartMenu extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()== startButton) {
 			game= new Game((int)numOfPlayer.getValue());
-			//game.InitGame();
-			//	IDEIGLENESEN KIVEVE, AMIG NINCS KIRAJZOLAS
+			//	IDEIGLENESEN KIVEVE, AMIG NINCS KIRAJZOLAS - game.InitGame();
 			GameTestInterfaceCommandFunction v = new GameTestInterfaceCommandFunction();
 			v.mainInit((int)numOfPlayer.getValue(), game);
 			v.playerPlace((int)numOfPlayer.getValue(), game);

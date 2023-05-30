@@ -26,6 +26,7 @@ public class StorageField extends Field {
      * A mezon levo amino felvetele, i-t tud felvenni
 	 * @return amino
 	 */
+	@Override
 	public int getAmino(int i) {
 
 		if (i<=amino) {
@@ -42,15 +43,18 @@ public class StorageField extends Field {
 	 * Setter a mezon levo aminohoz.
 	 * @param amino Beallitando amino mennyiseg.
 	 */
+	@Override
 	public void setAmino(int amino) {
 
 		this.amino = amino;
 	}
-	
+
+	@Override
 	public int getAllAmino() {
     	return amino;
 	}
-	
+
+	@Override
 	public int getAllNucleotid() {
     	return nucleotid;
 	}
@@ -60,6 +64,7 @@ public class StorageField extends Field {
 	 * A mezon levo nukleotid felvetele.
 	 * @return nucleotid
 	 */
+	@Override
 	public int getNucleotid(int m) {
 
 		if (m<=nucleotid) {
@@ -76,6 +81,7 @@ public class StorageField extends Field {
 	 * Setter a mezon levo nukleotidhoz.
 	 * @param amino Beallitando nukleotid mennyiseg.
 	 */
+	@Override
 	public void setNucleotid(int nucleotid) {
 
 		this.nucleotid = nucleotid;
@@ -94,6 +100,7 @@ public class StorageField extends Field {
     /**
      * minden mezon levo dolog listajaval ter vissza
      */
+	@Override
     public ArrayList<JButton> getJItems() {
 		ArrayList<JButton> items = new ArrayList<>();
 		
@@ -112,7 +119,7 @@ public class StorageField extends Field {
 		items.add(new JSubstance(this));
 		
 		for (int i=0; i<neighbourFields.size(); ++i){
-			items.add(neighbourFields.get(i).getView(i));
+			items.add(neighbourFields.get(i).getView());
 		}
 		
 		return items;

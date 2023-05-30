@@ -12,6 +12,7 @@ public class Timer implements Serializable {
      * Default constructor
      */
     public Timer() {
+        /*  */
     }
 
     /**
@@ -35,7 +36,9 @@ public class Timer implements Serializable {
         	int duration = steppables.get(i).Step();
         	if (duration == 0) temp.add(steppables.get(i));
         }
-    	if (temp.isEmpty()) return;
+    	if (temp.isEmpty()) {
+            return;
+        }
         for (Steppable z : temp) {
         	this.RemoveSteppable(z);
         }

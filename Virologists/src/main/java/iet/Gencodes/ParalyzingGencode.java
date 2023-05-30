@@ -22,6 +22,7 @@ public class ParalyzingGencode extends Gencode {
      * @param v Virologus, aki kesziti.
      * @return benulas agens
      */
+	@Override
     public ParalyzingAgent Craft(Virologist v) {
 
     	if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
@@ -33,7 +34,8 @@ public class ParalyzingGencode extends Gencode {
     	
     	return null;
     }
-    
+
+	@Override
     public String getType() {
 		return "parCode";
 	}

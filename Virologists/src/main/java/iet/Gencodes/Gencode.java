@@ -14,7 +14,7 @@ public abstract class Gencode implements Serializable {
     /**
      * Default constructor
      */
-    public Gencode() {
+    protected Gencode() {
     }
     
     private String name;

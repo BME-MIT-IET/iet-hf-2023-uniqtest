@@ -22,6 +22,7 @@ public class DancerGencode extends Gencode {
      * @param v Virologus, aki kesziti.
      * @return vitustanc agens
      */
+	@Override
     public DancerAgent Craft(Virologist v) {
 
     	if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
@@ -33,7 +34,8 @@ public class DancerGencode extends Gencode {
     	
     	return null;
     }
-    
+
+	@Override
     public String getType() {
 		return "danCode";
 	}

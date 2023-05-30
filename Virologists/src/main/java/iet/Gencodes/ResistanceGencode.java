@@ -22,6 +22,7 @@ public class ResistanceGencode extends Gencode {
      * @param v Virologus, aki kesziti.
      * @return ra vedo agens
      */
+	@Override
     public ResistanceAgent Craft(Virologist v) {
 
     	if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
@@ -33,7 +34,8 @@ public class ResistanceGencode extends Gencode {
     	
     	return null;
     }
-    
+
+	@Override
     public String getType() {
 		return "resCode";
 	}

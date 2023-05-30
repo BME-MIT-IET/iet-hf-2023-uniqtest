@@ -21,6 +21,7 @@ public class Field implements Serializable {
      * Default constructor
      */
     public Field() {
+		/*  */
     }
 
     /**
@@ -209,7 +210,7 @@ public class Field implements Serializable {
 			}
 			
 			for (int i=0; i<neighbourFields.size(); ++i){
-				items.add(neighbourFields.get(i).getView(i));
+				items.add(neighbourFields.get(i).getView());
 			}
 			
 			return items;
@@ -218,8 +219,8 @@ public class Field implements Serializable {
 		/**
 	     * gombot keszit a mezohoz es visszater vele
 	     */
-		public JButton getView(int num) {
-			return new JNeighbourField(this, num);
+		public JButton getView() {
+			return new JNeighbourField(this);
 		}
 		
 }
