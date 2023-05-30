@@ -31,7 +31,7 @@ public class AlzheimerAgent extends Agent {
      */
     public void Activate(Virologist v) {
     	setMemory(v.getGencodes());
-    	v.setGencodes(new HashSet<>());
+    	v.setGencodes(new HashSet<Gencode>());
     	setVirologist(v);
     }
 
