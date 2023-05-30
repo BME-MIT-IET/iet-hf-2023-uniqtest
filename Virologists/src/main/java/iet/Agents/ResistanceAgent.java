@@ -13,8 +13,6 @@ public class ResistanceAgent extends Agent {
      * Default constructor
      */
     public ResistanceAgent() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setName("ResistanceAgent");
     }
 
@@ -24,9 +22,6 @@ public class ResistanceAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	BlockAnoint ba = new BlockAnoint();
     	setVirologist(v);
     	if (v.getAnointedBehaviour().getPriority() < ba.getPriority())
@@ -39,10 +34,6 @@ public class ResistanceAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
-    	
         v.setAnointedBehaviour(new TakeAnoint());
         v.RefreshEffects();
     }

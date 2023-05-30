@@ -19,12 +19,10 @@ public final class Game implements Serializable {
      * @param = playerNumber
      */
     public Game(int playerNumber) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	PlayerNumber = playerNumber;
     	NooneHasWonYet=true;
     	round=1;
-    	Game.theGame=this;
+		Game.theGame=this;
     	movingInThisRound = false;
     }
     
@@ -96,8 +94,6 @@ public final class Game implements Serializable {
      * Jatek inditasa, inicializalasa.
      */
     public void StartGame() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	int i =0;
     	activeVirologist=virologists.get(i);
     	gf = new GameFrame(this);
@@ -119,17 +115,12 @@ public final class Game implements Serializable {
      * Ha valaki nyert, a jatek veget er, es a nyertes neve kiirodik.
      */
     public void EndGame() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     }
 
     /**
      * A jatek inicializalasa: virologusok letrehozasa, a jatek koreinek levezetese.
      */
     public void InitGame() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	/*
     	 * 		PALYA LETREHOZASA
     	 * 				!
@@ -154,8 +145,6 @@ public final class Game implements Serializable {
      * Ha a jatekos kore veget er, ez a fuggveny elinditja a kovetkezoet.
      */
     public void NextTurn() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);    
     	round++;
     	
     }
@@ -165,9 +154,6 @@ public final class Game implements Serializable {
      * @param s Leptetheto dolog.
      */
     public void AddSteppableToTimer(Steppable s) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	timer.AddSteppable(s);
     }
 
@@ -176,9 +162,6 @@ public final class Game implements Serializable {
      * @return true, ha valaki megnyeri a jatekot, azaz valakinel minden gencode megvan, false maskor
      */
     public boolean CheckWinCondition() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
         if(!NooneHasWonYet ) {
         	EndGame();
         	return true;
@@ -222,8 +205,6 @@ public final class Game implements Serializable {
 	 * @param timer the timer to set
 	 */
 	public void setTimer(Timer timer) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 		this.timer = timer;
 	}
 

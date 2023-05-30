@@ -13,8 +13,6 @@ public class ParalyzingAgent extends Agent {
      * Default constructor
      */
     public ParalyzingAgent() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setName("ParalyzingAgent");
     }
 
@@ -24,9 +22,6 @@ public class ParalyzingAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v.setVirologistBehaviour(new Paralyzed());
     	setVirologist(v);
     }
@@ -36,12 +31,7 @@ public class ParalyzingAgent extends Agent {
      * Beallitja a parameterkent kapott virologus viselkedeset normalra
      * @param v a virologus, akin aktivalodik a hatasa
      */
-    public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
-        //v.setVirologistBehaviour(new Normal());
-    }
+    public void Deactivate(Virologist v) {    }
     
     public String getId() {
  		return "ParAg";

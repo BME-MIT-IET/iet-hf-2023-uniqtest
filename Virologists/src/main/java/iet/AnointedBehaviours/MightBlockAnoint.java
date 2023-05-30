@@ -39,6 +39,7 @@ public class MightBlockAnoint extends AnointedBehaviour {
     /**
      * determinisztikussagot kikapcsolja vagy be
      */
+    @Override
     public void setDet(String s) {
     	if(s.equals("on")) det = 1;
     	else if(s.equals("random")) det = 0;
