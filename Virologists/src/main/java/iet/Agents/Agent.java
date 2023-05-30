@@ -15,7 +15,7 @@ public abstract class Agent implements Effect, Steppable, Serializable {
     /**
      * A konstruktor beallitja az agensek duration-jet
      */
-    public Agent() {
+    protected Agent() {
     	setDuration(3);
     }
     
@@ -47,12 +47,9 @@ public abstract class Agent implements Effect, Steppable, Serializable {
      * Lepteto fuggveny, ami minden korben csokkenti a durationt
      */
     public int Step() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setDuration(duration-1);
     	if (duration == 0) {
     		virologist.RemoveEffect(this);
-    		//Deactivate(virologist);
     	}
     	return duration;
     }
@@ -68,8 +65,6 @@ public abstract class Agent implements Effect, Steppable, Serializable {
 	 * @param beallitja a durationt
 	 */
 	public void setDuration(int duration) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 		this.duration = duration;
 	}
 
@@ -84,8 +79,6 @@ public abstract class Agent implements Effect, Steppable, Serializable {
 	 * @param beallitja a virologust, akin lesz az agens hatasa
 	 */
 	public void setVirologist(Virologist virologist) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 		this.virologist = virologist;
 	}
 

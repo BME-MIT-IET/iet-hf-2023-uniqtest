@@ -13,8 +13,6 @@ public class DancerAgent extends Agent {
      * Default constructor
      */
     public DancerAgent() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setName("DancerAgent");
     }
 
@@ -24,9 +22,6 @@ public class DancerAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	DanceMove dm = new DanceMove();
     	setVirologist(v);
     	if (v.getMoveBehaviour().getPriority() < dm.getPriority())
@@ -39,13 +34,8 @@ public class DancerAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
-    	
     	v.setMoveBehaviour(new NormalMove());
-    	v.RefreshEffects();
-    	
+    	v.RefreshEffects();    	
     }
     
     public String getId() {

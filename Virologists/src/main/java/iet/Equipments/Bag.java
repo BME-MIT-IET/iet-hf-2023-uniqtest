@@ -14,8 +14,6 @@ public class Bag extends Equipment {
     public Bag(Virologist v) {
 		super(v);
 		setName("Bag");
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     }
 
     /**
@@ -23,9 +21,6 @@ public class Bag extends Equipment {
      * @param v A virologus, akin aktivalodik.
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v.setMaxSubstance(15);
     }
 
@@ -34,9 +29,6 @@ public class Bag extends Equipment {
      * @param v A virologus, akirol eltunik a zsak hatasa.
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v.setMaxSubstance(10);
     	setVirologist(null);
     }

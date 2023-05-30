@@ -12,9 +12,6 @@ public class BlockAnoint extends AnointedBehaviour {
      * A konstruktor beallitja a viselkedesi forma prioritasat
      */
     public BlockAnoint() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	setPriority(4);
     }
 
@@ -25,9 +22,6 @@ public class BlockAnoint extends AnointedBehaviour {
      * @param with Amivel felkenik
      */
     public boolean Anointed(Virologist by, Virologist to, Agent with) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	return false;
     }
 

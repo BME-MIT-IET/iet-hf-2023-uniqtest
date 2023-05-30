@@ -21,8 +21,6 @@ public class Axe extends Equipment {
      * @param v Virologus, akin aktivalodik a kopeny hatasa.
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	if (getNumberOfUse() != 0)
     		v.setKillBehaviour(new KillWithAxe(this));
     }
@@ -32,9 +30,6 @@ public class Axe extends Equipment {
      * @param v Virologus, akirol eltunik a kopeny hatasa.
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v.setKillBehaviour(new CantKill());
     	setVirologist(null);
     }

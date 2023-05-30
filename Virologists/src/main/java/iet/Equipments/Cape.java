@@ -16,8 +16,6 @@ public class Cape extends Equipment {
     public Cape(Virologist v) {
 		super(v);
 		setName("Cape");
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     }
 
     /**
@@ -25,8 +23,6 @@ public class Cape extends Equipment {
      * @param v Virologus, akin aktivalodik a kopeny hatasa.
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	
     	MightBlockAnoint mba = new MightBlockAnoint();
     	
@@ -39,9 +35,6 @@ public class Cape extends Equipment {
      * @param v Virologus, akirol eltunik a kopeny hatasa.
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v.setAnointedBehaviour(new TakeAnoint());
     	setVirologist(null);
     }

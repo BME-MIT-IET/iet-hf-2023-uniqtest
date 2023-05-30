@@ -29,9 +29,6 @@ public abstract class AnointedBehaviour implements Serializable {
 	 * @return a prioritast
 	 */
 	public int getPriority() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-		
 		return priority;
 	}
 
@@ -40,9 +37,6 @@ public abstract class AnointedBehaviour implements Serializable {
 	 * @param beallitja a prioritast
 	 */
 	public void setPriority(int priority) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
 		this.priority = priority;
 	}
 	

@@ -12,9 +12,6 @@ public class TakeAnoint extends AnointedBehaviour {
      * A konstruktor beallitja a viselkedesi forma prioritasat
      */
     public TakeAnoint() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	setPriority(1);
     }
 
@@ -25,9 +22,6 @@ public class TakeAnoint extends AnointedBehaviour {
      * @param with Amivel felkenik
      */
     public boolean Anointed(Virologist by, Virologist to, Agent with) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	to.AddEffect(with);
     	return true;
     }
