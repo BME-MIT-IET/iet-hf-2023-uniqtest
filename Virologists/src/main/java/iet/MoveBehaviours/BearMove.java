@@ -1,6 +1,6 @@
 package main.java.iet.MoveBehaviours;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 import main.java.iet.Agents.BearAgent;
 import main.java.iet.Core.Virologist;
@@ -12,7 +12,7 @@ import main.java.iet.Graphics.JVirologist;
  *
  */
 public class BearMove extends MoveBehaviour {
-	private Random random = new Random();
+	private SecureRandom random = new SecureRandom();
 
 	/**
      * Default constructor

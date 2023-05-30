@@ -133,7 +133,6 @@ public class Serializer {
 			 ObjectInputStream in = new ObjectInputStream(fileIn)) {
 			return (Game) in.readObject();
 		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
 			return null;
 		}
 	}

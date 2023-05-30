@@ -1,9 +1,9 @@
 package main.java.iet.ProtoInterface;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
-import java.util.Random;
 
 import main.java.iet.Agents.Agent;
 import main.java.iet.Agents.BearAgent;
@@ -23,7 +23,7 @@ import main.java.iet.VirologistBehaviours.Normal;
 
 public class GameTestInterfaceCommandFunction {
 private Game game;
-	private Random random = new Random();
+	private SecureRandom random = new SecureRandom();
 	
 	/**
 	 *betolt egy megadott fajlt, egy elore keszitett jatekteret

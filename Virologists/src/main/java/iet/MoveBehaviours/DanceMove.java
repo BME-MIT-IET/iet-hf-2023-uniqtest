@@ -1,6 +1,6 @@
 package main.java.iet.MoveBehaviours;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 import main.java.iet.Core.Virologist;
 import main.java.iet.Fields.Field;
@@ -9,7 +9,7 @@ import main.java.iet.Fields.Field;
  * A kiszamithatatlan mozgast megvalosito osztaly.
  */
 public class DanceMove extends MoveBehaviour {
-    private Random random = new Random();
+    private SecureRandom random = new SecureRandom();
 
     /**
      * Default constructor

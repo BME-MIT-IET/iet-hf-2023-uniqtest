@@ -1,6 +1,6 @@
 package main.java.iet.AnointedBehaviours;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 import main.java.iet.Agents.Agent;
 import main.java.iet.Core.Virologist;
@@ -46,5 +46,5 @@ public class MightBlockAnoint extends AnointedBehaviour {
 	}
     
     private int det = 0;
-	private Random rand = new Random();
+	private SecureRandom rand = new SecureRandom();
 }
