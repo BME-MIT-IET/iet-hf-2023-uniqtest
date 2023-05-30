@@ -9,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.logging.Logger;
 
 import main.java.iet.Agents.Agent;
 import main.java.iet.Core.Effect;
@@ -24,6 +25,8 @@ import main.java.iet.Gencodes.Gencode;
  *
  */
 public class Serializer {
+	private static final Logger logger = Logger.getLogger(Serializer.class.getName());
+
 	public static void serialize(Game g,String filename) {
 		try {
 	         FileOutputStream fileOut = new FileOutputStream(filename + ".txt");
@@ -119,7 +122,7 @@ public class Serializer {
 			 }
 	         System.out.println("Saved");
 	      } catch (IOException i) {
-	         i.printStackTrace();
+			logger.severe("An error occurred while saving: " + i.getMessage());
 	      }
 	}
 	

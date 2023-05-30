@@ -1,6 +1,7 @@
 package main.java.iet.ProtoInterface;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import main.java.iet.Agents.AlzheimerAgent;
 import main.java.iet.Agents.DancerAgent;
@@ -27,7 +28,7 @@ import main.java.iet.VirologistBehaviours.Paralyzed;
  * A Proto interface parancsait kiszolgalo osztaly.
  */
 public class SekvenceTestInterfaceCommandFunction {
-
+	private static final Logger logger = Logger.getLogger(SekvenceTestInterfaceCommandFunction.class.getName());
 	
 	/**
 	 * A startgame parancsot kiszolgalo fuggveny.
@@ -187,7 +188,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnDancerGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
@@ -207,7 +208,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnResistanceGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
@@ -227,7 +228,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnParalyzingGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
@@ -247,7 +248,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnAlzheimerGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
