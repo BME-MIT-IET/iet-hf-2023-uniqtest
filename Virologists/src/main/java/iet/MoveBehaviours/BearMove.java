@@ -1,6 +1,6 @@
 package main.java.iet.MoveBehaviours;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 import main.java.iet.Agents.BearAgent;
 import main.java.iet.Core.Virologist;
@@ -12,6 +12,7 @@ import main.java.iet.Graphics.JVirologist;
  *
  */
 public class BearMove extends MoveBehaviour {
+	private SecureRandom random = new SecureRandom();
 
 	/**
      * Default constructor
@@ -27,7 +28,6 @@ public class BearMove extends MoveBehaviour {
 	public void Move(int i, Virologist v) {
         Field actualField = v.getField();
         int neighboursNumber = actualField.GetNeighbourFieldNum();        
-        Random random = new Random();
         Field nextField = actualField.GetNeighbour(random.nextInt(neighboursNumber));
         actualField.RemoveVirologist(v);
         nextField.AddVirologist(v);

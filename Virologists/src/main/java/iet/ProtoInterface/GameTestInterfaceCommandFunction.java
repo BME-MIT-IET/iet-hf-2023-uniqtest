@@ -1,8 +1,9 @@
 package main.java.iet.ProtoInterface;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Random;
+import java.util.Objects;
 
 import main.java.iet.Agents.Agent;
 import main.java.iet.Agents.BearAgent;
@@ -22,6 +23,7 @@ import main.java.iet.VirologistBehaviours.Normal;
 
 public class GameTestInterfaceCommandFunction {
 private Game game;
+	private SecureRandom random = new SecureRandom();
 	
 	/**
 	 *betolt egy megadott fajlt, egy elore keszitett jatekteret
@@ -125,7 +127,7 @@ private Game game;
 			parameterProblem("parameter number problem");
 			return;
 		}
-		if (params.get(1) != params.get(2)) {
+		if (!Objects.equals(params.get(1), params.get(2))) {
 			ArrayList<Field> fields = game.getFields();
 			for(int i=0; i<fields.size(); ++i){
 				if(fields.get(i).getId().equals(params.get(1))) {
@@ -471,12 +473,15 @@ private Game game;
 				break;
 			}
 		}
-		field = virologist1.getField();
-		virologists = field.getVirologists();
-		for (int i = 0; i < virologists.size(); i++) {
-			if (virologists.get(i).getId().equals(params.get(1))) {
-				virologists.get(i).UseKill(virologist1);
-				return;
+
+		field = virologist1 != null ? virologist1.getField() : null;
+		virologists = field != null ? field.getVirologists() : null;
+		if (virologists != null) {
+			for (Virologist virologist : virologists) {
+				if (virologist.getId().equals(params.get(1))) {
+					virologist.UseKill(virologist1);
+					return;
+				}
 			}
 		}
 		parameterProblem("the virologist1 can't touch virologist2");
@@ -521,7 +526,7 @@ private Game game;
 			for (int i = 0; i < virologists.size(); ++i) {
 				if (virologists.get(i).getId().equals(params.get(1))) {
 					Field standsHere = virologists.get(i).getField();
-					int randStep = new Random().nextInt(standsHere.GetNeighbourFieldNum());
+					int randStep = random.nextInt(standsHere.GetNeighbourFieldNum());
 					virologists.get(i).UseMove(randStep); 
 				}
 			}
