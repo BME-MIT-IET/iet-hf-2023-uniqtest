@@ -1,4 +1,4 @@
-<p align=center style="font-size: 20px">Manuális tesztek dokumentálása
+<p align=center style="font-size: 20px">Manuális tesztek dokumentálása<br
 <img src="./img/manual-test/fullscreen.png" height="350"><br></p>
 
 1.	Teszteset: Lépés
