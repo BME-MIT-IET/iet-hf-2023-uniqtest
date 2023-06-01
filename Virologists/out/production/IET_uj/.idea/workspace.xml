@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a830aac-3018-4124-8391-2f14e4c45b71" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2PhIyuILdgT69AMrteQcKkVZuui" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/nbrun/Desktop/intell/iet-hf-2023-uniqtest/Virologists"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.menu">
+    <configuration name="menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.iet.Main.menu" />
+      <module name="Virologists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.iet.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StealingTests.StealEquipmentFromNormalPlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Virologists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.iet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.iet" />
+      <option name="MAIN_CLASS_NAME" value="test.java.iet.StealingTests" />
+      <option name="METHOD_NAME" value="StealEquipmentFromNormalPlayerTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StealingTests.StealSubstanceFromNormalPlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Virologists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.iet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.iet" />
+      <option name="MAIN_CLASS_NAME" value="test.java.iet.StealingTests" />
+      <option name="METHOD_NAME" value="StealSubstanceFromNormalPlayerTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StealingTests.StealSubstanceFromParalyzedPlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Virologists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.iet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.iet" />
+      <option name="MAIN_CLASS_NAME" value="test.java.iet.StealingTests" />
+      <option name="METHOD_NAME" value="StealSubstanceFromParalyzedPlayerTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.java.iet in Virologists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Virologists" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.iet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="main.java.iet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.iet" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.menu" />
+        <item itemvalue="JUnit.test.java.iet in Virologists" />
+        <item itemvalue="JUnit.StealingTests.StealSubstanceFromParalyzedPlayerTest" />
+        <item itemvalue="JUnit.StealingTests.StealSubstanceFromNormalPlayerTest" />
+        <item itemvalue="JUnit.StealingTests.StealEquipmentFromNormalPlayerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a830aac-3018-4124-8391-2f14e4c45b71" name="Changes" comment="" />
+      <created>1683903144632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683903144632</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="UnitTests" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/java/iet/KillTests.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/src$test_java_iet_in_Virologists.ic" NAME="test.java.iet in Virologists Coverage Results" MODIFIED="1684142099941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.java.iet.*</FILTER>
+      <FILTER>main.java.iet.*</FILTER>
+    </SUITE>
+  </component>
+</project>
