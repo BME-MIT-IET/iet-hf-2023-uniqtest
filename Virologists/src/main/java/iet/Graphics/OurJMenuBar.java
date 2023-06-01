@@ -47,9 +47,6 @@ public class OurJMenuBar extends JMenuBar{
     		public void actionPerformed(ActionEvent ev) {
     			Serializer s = new Serializer();
     			s.serialize(Game.theGame, "save");
-    			
-    			
-    			//System.exit(0);
     		}
     	});
     	this.add(save);
@@ -64,7 +61,7 @@ public class OurJMenuBar extends JMenuBar{
             	virologist = Game.theGame.getActiveVirologist();
             	
             	JMenuItem m;
-            	if(virologist.getEquipments().size()==0 || virologist.getEquipments()==null) { 
+            	if(virologist.getEquipments().isEmpty() || virologist.getEquipments()==null) { 
             		m = new JMenuItem("no equipments yet");
             		equipments.add(m);
             	}
@@ -105,7 +102,7 @@ public class OurJMenuBar extends JMenuBar{
             	virologist = Game.theGame.getActiveVirologist();
             	
             	JMenuItem m;
-            	if(virologist.getAgents().size()==0 || virologist.getAgents()==null) { 
+            	if(virologist.getAgents().isEmpty() || virologist.getAgents()==null) {
             		m = new JMenuItem("no agents yet");
             		agents.add(m);
             	}
@@ -144,7 +141,7 @@ public class OurJMenuBar extends JMenuBar{
             	
             	
             	JMenuItem m;
-            	if(virologist.getGencodes().size()==0 || virologist.getGencodes()==null) { 
+            	if(virologist.getGencodes().isEmpty() || virologist.getGencodes()==null) {
             		m = new JMenuItem("no gencodes yet");
             		gencodes.add(m);
             	}
@@ -183,7 +180,7 @@ public class OurJMenuBar extends JMenuBar{
             	
             	
             	JMenuItem m;
-            	if(virologist.getEffects().size()==0 || virologist.getEffects()==null) { 
+            	if(virologist.getEffects().isEmpty() || virologist.getEffects()==null) {
             		m = new JMenuItem("no effects on you");
             		effects.add(m);
             	}

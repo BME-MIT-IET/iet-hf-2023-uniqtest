@@ -25,7 +25,7 @@ public class JVirologist extends JButton implements ActionListener {
     	addActionListener(this);
     	this.virologist = virologist;
 		setBackground(Color.WHITE);
-		if(bear) setIcon(new ImageIcon("icons/medve.png"));
+		if(Boolean.TRUE.equals(bear)) setIcon(new ImageIcon("icons/medve.png"));
 		else setIcon(new ImageIcon("icons/virologus.png"));
     	setBorderPainted(false);
     }
@@ -37,10 +37,8 @@ public class JVirologist extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		JFrame frame = Game.theGame.getGF();
-		InteractVirologist interactVirologist = new InteractVirologist(frame, "interact with virologist", virologist);
-		
+		new InteractVirologist(frame, "interact with virologist", virologist);
 	}
 
 	/**

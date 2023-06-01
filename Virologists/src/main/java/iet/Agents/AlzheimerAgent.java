@@ -15,8 +15,6 @@ public class AlzheimerAgent extends Agent {
      * Default constructor
      */
     public AlzheimerAgent() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 		setName("AlzheimerAgent");
     }
 
@@ -32,9 +30,6 @@ public class AlzheimerAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	setMemory(v.getGencodes());
     	v.setGencodes(new HashSet<Gencode>());
     	setVirologist(v);
@@ -46,9 +41,6 @@ public class AlzheimerAgent extends Agent {
      * @param v a virologus, akin deaktivalodik a hatasa
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
         for (Gencode g: memory) {
         	v.AddGencode(g);
         }
@@ -58,8 +50,6 @@ public class AlzheimerAgent extends Agent {
 	 * @return a memoriat
 	 */
 	public Set<Gencode> getMemory() {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 		return memory;
 	}
 
@@ -67,8 +57,6 @@ public class AlzheimerAgent extends Agent {
 	 * @param beallitja a memoriat
 	 */
 	public void setMemory(Set<Gencode> memory) {
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 		this.memory = memory;
 	}
 	

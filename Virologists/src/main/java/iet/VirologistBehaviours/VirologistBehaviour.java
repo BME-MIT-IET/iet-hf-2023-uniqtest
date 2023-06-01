@@ -3,10 +3,12 @@ package main.java.iet.VirologistBehaviours;
 import main.java.iet.Core.Virologist;
 import main.java.iet.Equipments.Equipment;
 
+import java.io.Serializable;
+
 /**
  * A virologus viselkedesi formajat tartalmazo interfesz.
  */
-public interface VirologistBehaviour  {
+public interface VirologistBehaviour extends Serializable {
 
 
     /**

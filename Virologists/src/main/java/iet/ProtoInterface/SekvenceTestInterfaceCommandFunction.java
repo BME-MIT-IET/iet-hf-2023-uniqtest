@@ -1,6 +1,7 @@
 package main.java.iet.ProtoInterface;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import main.java.iet.Agents.AlzheimerAgent;
 import main.java.iet.Agents.DancerAgent;
@@ -27,8 +28,10 @@ import main.java.iet.VirologistBehaviours.Paralyzed;
  * A Proto interface parancsait kiszolgalo osztaly.
  */
 public class SekvenceTestInterfaceCommandFunction {
+	private static final Logger logger = Logger.getLogger(SekvenceTestInterfaceCommandFunction.class.getName());
+	private static final String DOTS = "................";
+	private static final String LAST_GENCODE_QUESTION = "Ez az utolso megtanult genetikai kod? (i/n) :";
 
-	
 	/**
 	 * A startgame parancsot kiszolgalo fuggveny.
 	 */
@@ -36,7 +39,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Game g = new Game(3);
 		Timer t = new Timer();
 		g.setTimer(t);
-		System.out.println("................");
+		System.out.println(DOTS);
 		g.StartGame();
 	}
 	
@@ -50,7 +53,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		f1.addNeighbour(f2);
 		Virologist v = new Virologist(null, f1);
 		f1.AddVirologist(v);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v.UseMove(0);
 	}
 	
@@ -65,7 +68,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v = new Virologist(null, f);
 		f.AddVirologist(v);
 		v.setMoveBehaviour(new DanceMove());
-		System.out.println("................");
+		System.out.println(DOTS);
 		v.UseMove(0);
 	}
 	
@@ -81,7 +84,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v2 = new Virologist(game, null);
 		ResistanceAgent ra = new ResistanceAgent();
 		v1.AddAgent(ra);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.Anoint(v2, ra);
 	}
 	
@@ -97,7 +100,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v2 = new Virologist(game, null);
 		DancerAgent da = new DancerAgent();
 		v1.AddAgent(da);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.Anoint(v2, da);
 	}
 	
@@ -113,7 +116,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v2 = new Virologist(game, null);
 		ParalyzingAgent pa = new ParalyzingAgent();
 		v1.AddAgent(pa);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.Anoint(v2, pa);
 	}
 	
@@ -129,7 +132,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v2 = new Virologist(game, null);
 		AlzheimerAgent aa = new AlzheimerAgent();
 		v1.AddAgent(aa);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.Anoint(v2, aa);
 	}
 	
@@ -140,7 +143,7 @@ public class SekvenceTestInterfaceCommandFunction {
 	public void CraftAlzheimerAgent() {
 		Virologist virologist = new Virologist(null, null);
 		AlzheimerGencode alzheimerGencode = new AlzheimerGencode();
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.CraftAgent(alzheimerGencode);
 	}
 	
@@ -151,7 +154,7 @@ public class SekvenceTestInterfaceCommandFunction {
 	public void CraftParalyzingAgent() {
 		Virologist virologist = new Virologist(null, null);
 		ParalyzingGencode paralyzingGencode = new ParalyzingGencode();
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.CraftAgent(paralyzingGencode);
 	}
 	
@@ -162,7 +165,7 @@ public class SekvenceTestInterfaceCommandFunction {
 	public void CraftDancerAgent() {
 		Virologist virologist = new Virologist(null, null);
 		DancerGencode dancerGencode = new DancerGencode();
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.CraftAgent(dancerGencode);
 	}
 	
@@ -173,7 +176,7 @@ public class SekvenceTestInterfaceCommandFunction {
 	public void CraftResistanceAgent() {
 		Virologist virologist = new Virologist(null, null);
 		ResistanceGencode resistanceGencode = new ResistanceGencode();
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.CraftAgent(resistanceGencode);
 	}
 	
@@ -182,18 +185,18 @@ public class SekvenceTestInterfaceCommandFunction {
 	 * A learndancergencode parancsot kiszolgalo fuggveny.
 	 */
 	public void LearnDancerGencode() {
-		System.out.print("Ez az utolso megtanult genetikai kod? (i/n) :");
+		System.out.print("LAST_GENCODE_QUESTION");
 		char s='n';
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnDancerGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
 		DancerGencode dancerGencode = new DancerGencode();
 		if (s=='i') game.setNooneHasWonYet(false);
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.TakeGencode(dancerGencode);
 	}
 	
@@ -202,18 +205,18 @@ public class SekvenceTestInterfaceCommandFunction {
 	 * A learnresistancegencode parancsot kiszolgalo fuggveny.
 	 */
 	public void LearnResistanceGencode() {
-		System.out.print("Ez az utolso megtanult genetikai kod? (i/n) :");
+		System.out.print(LAST_GENCODE_QUESTION);
 		char s='n';
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnResistanceGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
 		ResistanceGencode resistanceGencode = new ResistanceGencode();
 		if (s=='i') game.setNooneHasWonYet(false);
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.TakeGencode(resistanceGencode);
 	}
 	
@@ -222,18 +225,18 @@ public class SekvenceTestInterfaceCommandFunction {
 	 * A learnparalyzinggencode parancsot kiszolgalo fuggveny.
 	 */
 	public void LearnParalyzingGencode() {
-		System.out.print("Ez az utolso megtanult genetikai kod? (i/n) :");
+		System.out.print(LAST_GENCODE_QUESTION);
 		char s='n';
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnParalyzingGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
 		ParalyzingGencode paralyzingGencode = new ParalyzingGencode();
 		if (s=='i') game.setNooneHasWonYet(false);
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.TakeGencode(paralyzingGencode);
 	}
 	
@@ -242,17 +245,17 @@ public class SekvenceTestInterfaceCommandFunction {
 	 * A learnalzheimergencode parancsot kiszolgalo fuggveny.
 	 */
 	public void LearnAlzheimerGencode() {
-		System.out.print("Ez az utolso megtanult genetikai kod? (i/n) :");
+		System.out.print(LAST_GENCODE_QUESTION);
 		char s='n';
 		try {
 		s = (char)System.in.read();
 		} catch (IOException e) {
-		e.printStackTrace();
+			logger.severe("An error occurred in LearnAlzheimerGencode: " + e.getMessage());
 		}
 		Game game = new Game(1);
 		Virologist virologist = new Virologist(game, null);
 		AlzheimerGencode alzheimerGencode = new AlzheimerGencode();
-		System.out.println("................");
+		System.out.println(DOTS);
 		if (s=='i') game.setNooneHasWonYet(false);
 		virologist.TakeGencode(alzheimerGencode);
 	}
@@ -269,7 +272,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		ra.setDuration(1);
 		v.AddEffect(ra);
 		t.AddSteppable(ra);
-		System.out.println("................");
+		System.out.println(DOTS);
 		t.Tick();
 	}
 	
@@ -286,7 +289,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		aa.setDuration(1);
 		v.AddEffect(aa);
 		t.AddSteppable(aa);
-		System.out.println("................");
+		System.out.println(DOTS);
 		t.Tick();
 	}
 	
@@ -302,7 +305,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		da.setDuration(1);
 		v.AddEffect(da);
 		t.AddSteppable(da);
-		System.out.println("................");
+		System.out.println(DOTS);
 		t.Tick();
 	}
 	
@@ -318,7 +321,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		pa.setDuration(1);
 		v.AddEffect(pa);
 		t.AddSteppable(pa);
-		System.out.println("................");
+		System.out.println(DOTS);
 		t.Tick();
 	}
 	
@@ -330,7 +333,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		ShelterField shelterField = new ShelterField();
 		Virologist v = new Virologist(null, shelterField);
 		Glove glove = new Glove(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v.TakeEquipment(glove);
 	}
 	
@@ -342,7 +345,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		ShelterField shelterField = new ShelterField();
 		Virologist v = new Virologist(null, shelterField);
 		Cape cape = new Cape(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v.TakeEquipment(cape);
 	}
 	
@@ -354,7 +357,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		ShelterField shelterField = new ShelterField();
 		Virologist v = new Virologist(null, shelterField);
 		Bag bag = new Bag(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v.TakeEquipment(bag);
 	}
 	
@@ -365,7 +368,7 @@ public class SekvenceTestInterfaceCommandFunction {
 	public void TakeSubstance() {
 		StorageField sf = new StorageField();
 		Virologist v = new Virologist(null, sf);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v.TakeSubstance();
 	}
 	
@@ -379,7 +382,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		BlockAnoint baAnoint = new BlockAnoint();
 		v2.setAnointedBehaviour(baAnoint);
 		AlzheimerAgent alzheimerAgent = new AlzheimerAgent();
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.Anoint(v2, alzheimerAgent);
 	}
 
@@ -393,10 +396,8 @@ public class SekvenceTestInterfaceCommandFunction {
 		game.setTimer(timer);
 		Virologist v1 = new Virologist(game, null);
 		Virologist v2 = new Virologist(game, null);
-		//ReturnAnoint returnAnoint = new ReturnAnoint();
-		//v2.setAnointedBehaviour(returnAnoint);
 		DancerAgent dancerAgent = new DancerAgent();
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.Anoint(v2, dancerAgent);
 	}
 	
@@ -408,7 +409,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Field field = new Field();
 		Virologist virologist = new Virologist(null, field);
 		Bag bag = new Bag(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.DropEquipment(bag);
 	}
 
@@ -420,7 +421,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Field field = new Field();
 		Virologist virologist = new Virologist(null, field);
 		Cape cape = new Cape(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.DropEquipment(cape);
 	}
 
@@ -432,7 +433,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Field field = new Field();
 		Virologist virologist = new Virologist(null, field);
 		Glove glove = new Glove(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		virologist.DropEquipment(glove);
 	}
 
@@ -446,7 +447,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Glove glove = new Glove(null);
 		Paralyzed paralyzed = new Paralyzed();
 		v2.setVirologistBehaviour(paralyzed);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealEquipment(v2, glove);
 	}
 	
@@ -460,7 +461,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Cape cape = new Cape(null);
 		Paralyzed paralyzed = new Paralyzed();
 		v2.setVirologistBehaviour(paralyzed);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealEquipment(v2, cape);
 	}
 
@@ -474,7 +475,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Bag bag = new Bag(null);
 		Paralyzed paralyzed = new Paralyzed();
 		v2.setVirologistBehaviour(paralyzed);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealEquipment(v2, bag);
 	}
 	
@@ -487,7 +488,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v2 = new Virologist(null, null);
 		Paralyzed paralyzed = new Paralyzed();
 		v2.setVirologistBehaviour(paralyzed);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealSubstance(v2);
 	}
 	
@@ -499,7 +500,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v1 = new Virologist(null, null);
 		Virologist v2 = new Virologist(null, null);
 		Bag bag = new Bag(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealEquipment(v2, bag);
 	}
 	
@@ -511,7 +512,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v1 = new Virologist(null, null);
 		Virologist v2 = new Virologist(null, null);
 		Glove glove = new Glove(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealEquipment(v2, glove);
 	}
 	
@@ -523,7 +524,7 @@ public class SekvenceTestInterfaceCommandFunction {
 		Virologist v1 = new Virologist(null, null);
 		Virologist v2 = new Virologist(null, null);
 		Cape cape = new Cape(null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealEquipment(v2, cape);
 	}
 	
@@ -534,7 +535,7 @@ public class SekvenceTestInterfaceCommandFunction {
 	public void PreventStealSubstance() {
 		Virologist v1 = new Virologist(null, null);
 		Virologist v2 = new Virologist(null, null);
-		System.out.println("................");
+		System.out.println(DOTS);
 		v1.StealSubstance(v2);
 	}
 
@@ -544,43 +545,43 @@ public class SekvenceTestInterfaceCommandFunction {
 	 */
 	public void Help() {
 		System.out.println("SekvenceTestInterface Help - Kiadhato parancsok");
-		System.out.println("	* startgame\n"
-				+ "	* normalmove\n"
-				+ "	* dancemove\n"
-				+ "	* anointwithresistanceagent\n"
-				+ "	* anointwithdanceragent\n"
-				+ "	* anointwithparalyzingagent\n"
-				+ "	* anointwithalzheimeragent\n"
-				+ "	* craftalzheimeragent\n"
-				+ "	* craftparalyzingagent\n"
-				+ "	* craftdanceragent\n"
-				+ "	* craftresistanceagent\n"
-				+ "	* learndancergencode\n"
-				+ "	* learnresistancegencode\n"
-				+ "	* learnparalyzinggencode\n"
-				+ "	* learnalzheimergencode\n"
-				+ "	* degradationofresistanceagent\n"
-				+ "	* degradationofalzheimeragent\n"
-				+ "	* degradationofdanceragent\n"
-				+ "	* degradationofparalyzingagent\n"
-				+ "	* takeglove\n"
-				+ "	* takecape\n"
-				+ "	* takebag\n"
-				+ "	* takesubstance\n"
-				+ "	* defensewithresistanceagent\n"
-				+ "	* defensewithglove\n"
-				+ "	* dropbag\n"
-				+ "	* dropcape\n"
-				+ "	* dropglove\n"
-				+ "	* stealglove\n"
-				+ "	* stealcape\n"
-				+ "	* stealbag\n"
-				+ "	* stealsubstance\n"
-				+ "	* preventstealbag\n"
-				+ "	* preventstealglove\n"
-				+ "	* preventstealcape\n"
-				+ "	* preventstealsubstance\n"
-				+ "	* help");
+		System.out.println("\t* startgame\n"
+				+ "\t* normalmove\n"
+				+ "\t* dancemove\n"
+				+ "\t* anointwithresistanceagent\n"
+				+ "\t* anointwithdanceragent\n"
+				+ "\t* anointwithparalyzingagent\n"
+				+ "\t* anointwithalzheimeragent\n"
+				+ "\t* craftalzheimeragent\n"
+				+ "\t* craftparalyzingagent\n"
+				+ "\t* craftdanceragent\n"
+				+ "\t* craftresistanceagent\n"
+				+ "\t* learndancergencode\n"
+				+ "\t* learnresistancegencode\n"
+				+ "\t* learnparalyzinggencode\n"
+				+ "\t* learnalzheimergencode\n"
+				+ "\t* degradationofresistanceagent\n"
+				+ "\t* degradationofalzheimeragent\n"
+				+ "\t* degradationofdanceragent\n"
+				+ "\t* degradationofparalyzingagent\n"
+				+ "\t* takeglove\n"
+				+ "\t* takecape\n"
+				+ "\t* takebag\n"
+				+ "\t* takesubstance\n"
+				+ "\t* defensewithresistanceagent\n"
+				+ "\t* defensewithglove\n"
+				+ "\t* dropbag\n"
+				+ "\t* dropcape\n"
+				+ "\t* dropglove\n"
+				+ "\t* stealglove\n"
+				+ "\t* stealcape\n"
+				+ "\t* stealbag\n"
+				+ "\t* stealsubstance\n"
+				+ "\t* preventstealbag\n"
+				+ "\t* preventstealglove\n"
+				+ "\t* preventstealcape\n"
+				+ "\t* preventstealsubstance\n"
+				+ "\t* help");
 	}
 
 

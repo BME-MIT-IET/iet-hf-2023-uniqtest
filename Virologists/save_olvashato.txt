@@ -52,13 +52,13 @@ SH6 szomszedai: F3, L2
 ST6 szomszedai: F3, L2, F8, SH1
 
 Mezokon talalhato dolgok: 
-F1 mezon levo dolgok: 
-F2 mezon levo dolgok: 
-F3 mezon levo dolgok: null null 
-F6 mezon levo dolgok: 
+F1 mezon levo dolgok: null 
+F2 mezon levo dolgok: null null 
+F3 mezon levo dolgok: null 
+F6 mezon levo dolgok: null 
 F7 mezon levo dolgok: 
 F8 mezon levo dolgok: 
-F9 mezon levo dolgok: 
+F9 mezon levo dolgok: null 
 F10 mezon levo dolgok: 
 F11 mezon levo dolgok: 
 F12 mezon levo dolgok: 
@@ -85,31 +85,73 @@ F32 mezon levo dolgok:
 F33 mezon levo dolgok: 
 F34 mezon levo dolgok: 
 F35 mezon levo dolgok: 
-ST1 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+ST1 mezon levo dolgok: null 
 ST2 mezon levo dolgok: 30 darab amino 30 darab nukleotid
 ST3 mezon levo dolgok: 30 darab amino 30 darab nukleotid
 ST4 mezon levo dolgok: 30 darab amino 30 darab nukleotid
 ST5 mezon levo dolgok: 30 darab amino 30 darab nukleotid
-SH1 mezon levo dolgok: null null null null null 
+SH1 mezon levo dolgok: null null 
 SH2 mezon levo dolgok: null null 
 SH3 mezon levo dolgok: null null 
 SH4 mezon levo dolgok: null null null null 
 SH5 mezon levo dolgok: null null null null 
-L1 mezon levo dolgok: parCode 
-L2 mezon levo dolgok: danCode 
+L1 mezon levo dolgok: null null parCode 
+L2 mezon levo dolgok: null null null null null danCode 
 L3 mezon levo dolgok: resCode 
 L4 mezon levo dolgok: alzCode 
 T1 mezon levo dolgok: parCode 
 T2 mezon levo dolgok: danCode 
 SH6 mezon levo dolgok: null null null null 
-ST6 mezon levo dolgok: 30 darab amino 30 darab nukleotid
+ST6 mezon levo dolgok: null null null null null 
 
 Virologusoknal levo dolgok: 
+null-nel levo dolgok: parCode 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: null null null 10 darab amino 10 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: null null null 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 10 darab amino 10 darab nukleotid
+null-nel levo dolgok: danCode 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: danCode 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: danCode 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: danCode 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: null 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
+null-nel levo dolgok: 0 darab amino 0 darab nukleotid
 null-nel levo dolgok: 0 darab amino 0 darab nukleotid
 null-nel levo dolgok: 0 darab amino 0 darab nukleotid
 null-nel levo dolgok: 0 darab amino 0 darab nukleotid
 
 Virologusokon levo effect-ek: 
+null: 
+null: null, null, 
+null: 
+null: null, null, 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
+null: 
 null: 
 null: 
 null: 

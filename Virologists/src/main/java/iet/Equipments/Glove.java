@@ -15,9 +15,6 @@ public class Glove extends Equipment {
      */
     public Glove(Virologist v) {
 		super(v);
-		//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-   
     	setNumberOfUse(3);
     	setName("Glove");
     }
@@ -27,9 +24,6 @@ public class Glove extends Equipment {
      * @param v Virologus, akin aktivalodik a hatas.
      */
     public void Activate(Virologist v) {      
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	ReturnAnoint ra = new ReturnAnoint(this);
     	
     	if (v.getAnointedBehaviour().getPriority() < ra.getPriority())
@@ -41,9 +35,6 @@ public class Glove extends Equipment {
      * @param v Virologus, akirol eltunik a kesztyu hatasa.
      */
     public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v.setAnointedBehaviour(new TakeAnoint());
     	v.RefreshEffects();
     	setVirologist(null);

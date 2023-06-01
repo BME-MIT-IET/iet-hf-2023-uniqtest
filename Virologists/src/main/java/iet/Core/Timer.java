@@ -12,8 +12,7 @@ public class Timer implements Serializable {
      * Default constructor
      */
     public Timer() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
+        /*  */
     }
 
     /**
@@ -31,15 +30,15 @@ public class Timer implements Serializable {
      * Ha az elettartamuk lejar (egyenlo nulla) akkor eltavolitjuk oket a listabol.
      */
     public void Tick() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	ArrayList<Steppable> temp = new ArrayList<Steppable>();
+    	ArrayList<Steppable> temp = new ArrayList<>();
         
     	for (int i = 0; i < steppables.size(); i++) {
         	int duration = steppables.get(i).Step();
         	if (duration == 0) temp.add(steppables.get(i));
         }
-    	if (temp.size() == 0) return;
+    	if (temp.isEmpty()) {
+            return;
+        }
         for (Steppable z : temp) {
         	this.RemoveSteppable(z);
         }
@@ -49,9 +48,6 @@ public class Timer implements Serializable {
      * @param s A Steppable intefeszu elem, amit listahoz akarunk adni.
      */
     public void AddSteppable(Steppable s) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	steppables.add(s);
     }
 
@@ -60,9 +56,6 @@ public class Timer implements Serializable {
      * @param s A Steppable interfeszu elem, amit el szeretnenk tavolitani a listabol.
      */
     public void RemoveSteppable(Steppable s) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	steppables.remove(s);
     }
 

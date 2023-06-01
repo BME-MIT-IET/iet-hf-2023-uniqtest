@@ -86,7 +86,6 @@ public class Interface {
 		}
 		
 		System.out.println("Thank you for choosing Proto Interface services\n");
-		//System.out.print("$>>");
 	}
 	
 	
@@ -147,10 +146,10 @@ public class Interface {
 	 */
 	public void Help() {
 		System.out.println("iet.ProtoInterface Help - Kiadhato parancsok");
-		System.out.println("	* sekvenceTest (ez a szkeleton tesztje)\n"
-				+ "	* gameTest (ez a proto tesztje)\n"
-				+ "	* exit\n"
-				+ "	* help");
+		System.out.println("\t* sekvenceTest (ez a szkeleton tesztje)\n"
+				+ "\t* gameTest (ez a proto tesztje)\n"
+				+ "\t* exit\n"
+				+ "\t* help");
 	}
 
 
