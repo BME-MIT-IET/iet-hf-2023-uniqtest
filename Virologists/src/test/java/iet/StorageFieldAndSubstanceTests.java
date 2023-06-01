@@ -39,21 +39,21 @@ public class StorageFieldAndSubstanceTests {
         void setAminoTest() {
             storage.setAmino(13);
 
-            assertEquals(13, storage.getAmino());
+            assertEquals(13, storage.getAllAmino());
         }
 
         @Test
         void setNucleotidTest() {
             storage.setNucleotid(5);
 
-            assertEquals(5, storage.getNucleotid());
+            assertEquals(5, storage.getAllNucleotid());
         }
 
         @Test
         void PickUpAminoTest() {
             storageVirologist.TakeAmino();
 
-            assertEquals(10, storage.getAmino());
+            assertEquals(10, storage.getAllAmino());
             assertEquals(10, storageVirologist.getAmino());
         }
 
@@ -61,7 +61,7 @@ public class StorageFieldAndSubstanceTests {
         void PickUpNucleotidTest() {
             storageVirologist.TakeNucleotide();
 
-            assertEquals(10, storage.getNucleotid());
+            assertEquals(10, storage.getAllNucleotid());
             assertEquals(10, storageVirologist.getNucleotid());
         }
 
@@ -71,7 +71,7 @@ public class StorageFieldAndSubstanceTests {
             storageVirologist.AddEquipment(bag);
             storageVirologist.TakeNucleotide();
 
-            assertEquals(5, storage.getNucleotid());
+            assertEquals(5, storage.getAllNucleotid());
             assertEquals(15, storageVirologist.getNucleotid());
         }
 }
