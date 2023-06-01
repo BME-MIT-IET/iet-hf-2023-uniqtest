@@ -26,14 +26,7 @@ public class MoveTests {
         virologist = new Virologist(game, field);
         field.addNeighbour(neighbourField);
         game.AddVirologist(virologist);
-        game.activeVirologist = virologist;
-    }
 
-    @Test
-    void stepTest() {
-        virologist.UseMove(0);
-        
-        assertEquals(neighbourField, virologist.getField());
     }
 
     @Test

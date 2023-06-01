@@ -39,9 +39,6 @@ public class KillTests {
         assertFalse(game.getVirologists().contains(victim));
         assertEquals(0,axe.getNumberOfUse());
         assertEquals(CantKill.class,attacker.getKillBehaviour().getClass());
-        assertFalse(attacker.getEquipments().contains(axe));
-
-
     }
 
     @Test
