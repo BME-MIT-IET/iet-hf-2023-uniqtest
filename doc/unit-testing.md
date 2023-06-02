@@ -2,6 +2,8 @@
 
 A unit teszteléssel a komponenseket elkülönítve, izolált környezetben teszteltük az alkalmazást. Az egyes egységek (pl. osztályok, metódusok) működését külön-külön vizsgáltuk meg, hogy megbizonyosodjunk a helyes működésükről.
 
+A projektben nem voltak tesztek, sem teszt kódlefedettséget mérő eszköz. A JaCoCo-t választottuk ennek segítésére, amivel jól láthattuk, hogy mi a teljes code coverage és mik a még nem lefedett kódrészek. Ezenkívül a SonarCloud-ban is látható volt, hogy mennyire nőtt a kódlefedettség.
+
 # Tesztesetek
 
 
@@ -275,6 +277,12 @@ A teszt lépései:
 2. Nukleotid felvétele.
 
 ✅ A teszt sikeresnek tekinthető, ha a virológus feltudta venni az összes nukleotidot.
+
+## Code Coverage eredmények
+
+![JaCoCoResult](../doc/img/ui-test/jacoco.jpg)
+![JaCoCoCodeCoverage](../doc/img/ui-test/jacoco.png)
+![SonarCloudCoverage](../doc/img/ui-test/sonarcloudcoverage.jpg)
 
 ## Mit tanultunk belőle?
 
