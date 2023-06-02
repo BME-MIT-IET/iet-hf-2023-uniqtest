@@ -83,17 +83,7 @@ A teszt lépései:
 4. Háromszor meghívjuk a játék időzítőjének (timer) Tick metódusát.
 5. Ellenőrizzük, hogy a virológus hatásai nem tartalmazzák a dancerAgentet.
 
-✅ A teszt sikeresnek tekinthető, ha a táncos ügynök nem szerepel a virológus hatásai között az anoint hatásának lejárta után.
-
-## Miért volt ez hasznos?
-
-- Az elkészített unit tesztekkel külön-külön teszteltük a Game, Field és Virologist osztályokat, amelyek az anoint funkcionalitásáért felelősek. Ezáltal koncentráltunk ezekre a komponensekre, és kiküszöböltük a többi rész (pl. külső függőségek) befolyását.
-
-- Az elkülönített tesztek izolált környezetben futnak, könnyűvé téve a hibák azonosítását és hibakeresését. A tesztek egyszerűen követhetőek, a hibák pedig gyorsan megtalálhatóak.
-
-- A tesztek eredményeként megbizonyosodtunk a kód helyes működéséről. A pozitív teszteredmények azt jelentik, hogy a kód helyesen kezeli az anoint műveleteket a különböző viselkedések esetén.
-
-- A tesztek segítségével pontosan megértettük az anoint funkcionalitását és az osztályok közötti interakciókat. Felfedeztük, hogy a viselkedések hogyan befolyásolják a hatásokat, és hogyan lehet ezeket a viselkedéseket külön-külön tesztelni és ellenőrizni.
+✅ A teszt sikeresnek tekinthető, ha a dancerAgent nem szerepel a virológus hatásai között az anoint hatásának lejárta után.
 
 ## KillTests
 
@@ -285,3 +275,13 @@ A teszt lépései:
 2. Nukleotid felvétele.
 
 ✅ A teszt sikeresnek tekinthető, ha a virológus feltudta venni az összes nukleotidot.
+
+## Miért volt ez hasznos?
+
+- Az elkészített unit tesztekkel külön-külön teszteltük a Game, Field és Virologist osztályokat, amelyek az anoint funkcionalitásáért felelősek. Ezáltal koncentráltunk ezekre a komponensekre, és kiküszöböltük a többi rész (pl. külső függőségek) befolyását.
+
+- Az elkülönített tesztek izolált környezetben futnak, könnyűvé téve a hibák azonosítását és hibakeresését. A tesztek egyszerűen követhetőek, a hibák pedig gyorsan megtalálhatóak.
+
+- A tesztek eredményeként megbizonyosodtunk a kód helyes működéséről. A pozitív teszteredmények azt jelentik, hogy a kód helyesen kezeli az anoint műveleteket a különböző viselkedések esetén.
+
+- A tesztek segítségével pontosan megértettük az anoint funkcionalitását és az osztályok közötti interakciókat. Felfedeztük, hogy a viselkedések hogyan befolyásolják a hatásokat, és hogyan lehet ezeket a viselkedéseket külön-külön tesztelni és ellenőrizni.
