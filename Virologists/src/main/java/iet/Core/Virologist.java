@@ -293,12 +293,17 @@ public class Virologist implements Serializable {
      * Hozzaadja a parameterkent kapott effektet az effektek tarolojaba, valamint aktivalja.
      * @param e Az effekttel rendelkezo dolog.
      */
-    public void AddEffect(Effect e) {
-    	effects.add(e);
-    	e.Activate(this);
-    }
 
-    /** 
+	public void AddEffect(Effect e) {
+		if (!effects.contains(e)) {
+			effects.add(e);
+			e.Activate(this);
+		}
+	}
+
+
+
+	/**
      * Agens vagy felszereles hatasanak megszunese a virologuson.
      * @param e Hatas, ami megszunik a virologuson.
      */
@@ -550,9 +555,13 @@ public class Virologist implements Serializable {
      * Hozzaad egy gencode-ot a gencode set-hez.
      * @param g Gencode, amit hozza akarunk adni.
      */
-    public void AddGencode(Gencode g) {
-    	gencodes.add(g);
-    }
+
+	public void AddGencode(Gencode g) {
+		if (!gencodes.contains(g)) {
+			gencodes.add(g);
+		}
+	}
+
 
 	/**
 	 * @return killBehaviour
