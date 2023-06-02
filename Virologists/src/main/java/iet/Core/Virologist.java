@@ -142,7 +142,7 @@ public class Virologist implements Serializable {
     	if (!game.GetMovengInThisRound()) {
     		moveBehaviour.Move(i, this);
         	game.SetMovengInThisRound();
-            game.RefreshFrame();
+            if(game.gf != null) game.RefreshFrame();
     	}
     }
 
@@ -162,7 +162,7 @@ public class Virologist implements Serializable {
      */
     public void CraftAgent(Gencode g) {
         this.AddAgent( g.Craft(this) );
-        game.RefreshFrame();
+		if(game.gf != null) game.RefreshFrame();
        
     }
 
@@ -173,7 +173,7 @@ public class Virologist implements Serializable {
      */
     public void StealEquipment(Virologist v, Equipment e) {
         v.UseRemoveEquipment(e, this);
-        game.RefreshFrame();
+		if(game.gf != null) game.RefreshFrame();
     }
 
     /** 
@@ -192,7 +192,7 @@ public class Virologist implements Serializable {
     	int[] newAmNu = v.UseRemoveSubstance(aSteal, nSteal);
     	this.setAmino(amino+newAmNu[0]);
     	this.setNucleotid(nucleotid+newAmNu[1]);
-        game.RefreshFrame();
+		if(game.gf != null) game.RefreshFrame();
     }
 
     /**
@@ -203,7 +203,7 @@ public class Virologist implements Serializable {
         AddGencode(g);
         if (gencodes.size() == 4)
         	game.setNooneHasWonYet(false);
-        game.RefreshFrame();
+		if(game.gf != null) game.RefreshFrame();
         game.CheckWinCondition();
     }
 
@@ -216,7 +216,7 @@ public class Virologist implements Serializable {
             field.RemoveEquipment(e);
             AddEquipment(e);
             e.setVirologist(this);
-            game.RefreshFrame();
+			if(game.gf != null) game.RefreshFrame();
     	}
     }
 
@@ -226,7 +226,7 @@ public class Virologist implements Serializable {
     public void DropEquipment(Equipment e) {
     	RemoveEquipment(e);
     	field.AddEquipment(e);
-    	game.RefreshFrame();
+		if(game.gf != null) game.RefreshFrame();
     	
     }
 
@@ -305,7 +305,7 @@ public class Virologist implements Serializable {
     public void RemoveEffect(Effect e) {
     	e.Deactivate(this);
     	effects.remove(e);
-    	RefreshEffects();
+		RefreshEffects();
     }
 
     /**
@@ -331,7 +331,7 @@ public class Virologist implements Serializable {
     public void Anoint(Virologist v, Agent with) {
     	v.UseAnointed(this, with);
     	agents.remove(with);
-    	game.RefreshFrame();
+		if(game.gf != null) game.RefreshFrame();
     }
 
     /**
