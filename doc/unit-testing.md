@@ -83,7 +83,7 @@ A teszt lépései:
 4. Háromszor meghívjuk a játék időzítőjének (timer) Tick metódusát.
 5. Ellenőrizzük, hogy a virológus hatásai nem tartalmazzák a dancerAgentet.
 
-✅ A teszt sikeresnek tekinthető, ha a táncos ügynök nem szerepel a virológus hatásai között az anoint hatásának lejárta után.
+✅ A teszt sikeresnek tekinthető, ha a dancerAgent nem szerepel a virológus hatásai között az anoint hatásának lejárta után.
 
 ## Miért volt ez hasznos?
 
