@@ -14,8 +14,7 @@ public class Paralyzed implements VirologistBehaviour, Serializable {
      * Default constructor
      */
     public Paralyzed() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
+        /* */
     }
 
     /**
@@ -25,9 +24,6 @@ public class Paralyzed implements VirologistBehaviour, Serializable {
      * @param v2 Akitol torolni kell a felszerelest.
      */
     public void RemoveEquipment(Equipment e, Virologist v1, Virologist v2) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	v2.RemoveEquipment(e);
     	v1.AddEquipment(e);
     	
@@ -40,9 +36,6 @@ public class Paralyzed implements VirologistBehaviour, Serializable {
      * @param v Virologus, akitol lopni kivan valaki.
      */
     public void RemoveSubstance(int a, int n, Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
        	v.setAmino(v.getAmino()-a);
         v.setNucleotid(v.getNucleotid()-n);
     }
@@ -53,9 +46,7 @@ public class Paralyzed implements VirologistBehaviour, Serializable {
      * @param v a virologus, akinek jelezni kell.
      */
     public void YourTurn(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+    	/* */
     }
 
 }

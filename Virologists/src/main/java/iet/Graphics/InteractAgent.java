@@ -14,7 +14,6 @@ import javax.swing.JLabel;
 import main.java.iet.Agents.Agent;
 import main.java.iet.Core.Game;
 import main.java.iet.Core.Virologist;
-import main.java.iet.Equipments.Equipment;
 
 
 public class InteractAgent implements ActionListener{
@@ -38,8 +37,8 @@ public class InteractAgent implements ActionListener{
         d.setLocation(200, 200);
         
         
-        String s[] = options();
-        c = new JComboBox<String>(s);
+        String[] s = options();
+        c = new JComboBox<>(s);
         d.add(c);
         
         JButton b = new JButton("do it");
@@ -82,7 +81,6 @@ public class InteractAgent implements ActionListener{
 		if (c.getItemCount() > 0) {
 			String selectedItem = (String)c.getSelectedItem();
 			int index = Integer.parseInt((selectedItem.split(" ", 3))[1]);
-			Equipment equipment = null;
 			ArrayList<Virologist> allVirologist = Game.theGame.getVirologists();
 			Virologist selectedVirologist = allVirologist.get(index);
 			Game.theGame.getActiveVirologist().Anoint(selectedVirologist, selectedAgent);

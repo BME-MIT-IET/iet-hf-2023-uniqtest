@@ -45,85 +45,85 @@ public class GameTestInterpreter {
 				exit = true;
 				break;
 			case "loadmap":
-				gameTestInterfaceCommandFunction.LoadMap();
+				gameTestInterfaceCommandFunction.loadMap();
 				break;
 			case "save":
-				gameTestInterfaceCommandFunction.Save();
+				gameTestInterfaceCommandFunction.save();
 				break;
 			case "init":
-				gameTestInterfaceCommandFunction.Init();
+				gameTestInterfaceCommandFunction.init();
 				break;
 			case "field":
-				gameTestInterfaceCommandFunction.Field();
+				gameTestInterfaceCommandFunction.field();
 				break;
 			case "neighbours":
-				gameTestInterfaceCommandFunction.Neighbours();
+				gameTestInterfaceCommandFunction.neighbours();
 				break;
 			case "setgencode":
-				gameTestInterfaceCommandFunction.SetGencode();
+				gameTestInterfaceCommandFunction.setGencode();
 				break;
 			case "stepall":
 				gameTestInterfaceCommandFunction.StepAll();
 				break;
 			case "viewgame":
-				gameTestInterfaceCommandFunction.ViewGame();
+				gameTestInterfaceCommandFunction.viewGame();
 				break;
 			case "virologiststate":
-				gameTestInterfaceCommandFunction.VirologistState();
+				gameTestInterfaceCommandFunction.virologistState();
 				break;
 			case "setvirologist":
-				gameTestInterfaceCommandFunction.SetVirologist();
+				gameTestInterfaceCommandFunction.setVirologist();
 				break;
 			case "setvirstate":
-				gameTestInterfaceCommandFunction.SetVirState();
+				gameTestInterfaceCommandFunction.setVirState();
 				break;
 			case "kill":
-				gameTestInterfaceCommandFunction.Kill();
+				gameTestInterfaceCommandFunction.kill();
 				break;
 			case "move":
-				gameTestInterfaceCommandFunction.Move();
+				gameTestInterfaceCommandFunction.move();
 				break;
 			case "learngencode":
-				gameTestInterfaceCommandFunction.LearnGencode();
+				gameTestInterfaceCommandFunction.learnGencode();
 				break;
 			case "craftagent":
-				gameTestInterfaceCommandFunction.CraftAgent();
+				gameTestInterfaceCommandFunction.craftAgent();
 				break;
 			case "useagent":
-				gameTestInterfaceCommandFunction.UseAgent();
+				gameTestInterfaceCommandFunction.useAgent();
 				break;
 			case "takeequipment":
-				gameTestInterfaceCommandFunction.TakeEquipment();
+				gameTestInterfaceCommandFunction.takeEquipment();
 				break;
 			case "dropequipment":
-				gameTestInterfaceCommandFunction.DropEquipment();
+				gameTestInterfaceCommandFunction.dropEquipment();
 				break;
 			case "setequipment":
-				gameTestInterfaceCommandFunction.SetEquipment();
+				gameTestInterfaceCommandFunction.setEquipment();
 				break;
 			case "stealequipment":
-				gameTestInterfaceCommandFunction.StealEquipment();
+				gameTestInterfaceCommandFunction.stealEquipment();
 				break;
 			case "stealsubstance":
-				gameTestInterfaceCommandFunction.StealSubstance();
+				gameTestInterfaceCommandFunction.stealSubstance();
 				break;
 			case "setsubstance":
-				gameTestInterfaceCommandFunction.SetSubstance();
+				gameTestInterfaceCommandFunction.setSubstance();
 				break;
 			case "capeprotection":
-				gameTestInterfaceCommandFunction.CapeProtection();
+				gameTestInterfaceCommandFunction.capeProtection();
 				break;
 			case "takesubstance":
-				gameTestInterfaceCommandFunction.TakeSubstance();
+				gameTestInterfaceCommandFunction.takeSubstance();
 				break;
 			case "help":
 				Help();
 				break;
 			case "testmapinit":
-				gameTestInterfaceCommandFunction.Test_Init();
+				gameTestInterfaceCommandFunction.testInit();
 				break;
 			case "szipi":
-				gameTestInterfaceCommandFunction.Main_Init(3, new Game(0));
+				gameTestInterfaceCommandFunction.mainInit(3, new Game(0));
 				break;
 			default:
 				Fail();
@@ -137,32 +137,32 @@ public class GameTestInterpreter {
 	public void Help() {
 		System.out.println("GameTestInterface Help - Kiadhato parancsok");
 		System.out.println(
-				"	* init\n"
-				+ "	* loadMap <filename>\n"
-				+ "	* viewGame\n"
-				+ "	* setVirologist <virologist ID> <Field ID>\n"
-				+ "	* virologistState <virologist ID>\n"
-				+ "	* setVirState <virologist ID> <state>\n"
-				+ "	* field <typeOfField> <field ID>\n"
-				+ "	* neighbours <field1 ID> <field2 ID>\n"
-				+ "	* move <virologist ID> <field ID> <randOnOff>\n"
-				+ "	* setEquipment <equipmentType> <equipment ID> <field ID>\n"
-				+ "	* setSubstance <type> <amount> <field ID>\n"
-				+ "	* setGencode <genType> <field ID>\n"
-				+ "	* capeProtection <random/on/off>\n"
-				+ "	* stealSubstance <virologist1 ID> <virologist2 ID>\n"
-				+ "	* stealEquipment <equipment ID> <virologist1 ID> <virologist2 ID>\n"
-				+ "	* learnGencode <virologist ID>\n"
-				+ "	* takeEquipment <equipment ID> <virologist ID>\n"
-				+ "	* dropEquipment <equipment ID> <virologist ID>\n"
-				+ "	* takeSubstance <substanceType> <virologistID>\n"
-				+ "	* kill <virologist1 ID> <virologist2 ID>\n"
-				+ "	* craftAgent <agentType> <virologist ID>\n"
-				+ "	* useAgent <agentType> <virologist1 ID> <virologist2 ID>\n"
-				+ "	* stepAll\n"
-				+ "	* save <fileName>\n"
-				+ "	* help\n"
-				+ "	* exit");
+				"\t* init\n"
+				+ "\t* loadMap <filename>\n"
+				+ "\t* viewGame\n"
+				+ "\t* setVirologist <virologist ID> <Field ID>\n"
+				+ "\t* virologistState <virologist ID>\n"
+				+ "\t* setVirState <virologist ID> <state>\n"
+				+ "\t* field <typeOfField> <field ID>\n"
+				+ "\t* neighbours <field1 ID> <field2 ID>\n"
+				+ "\t* move <virologist ID> <field ID> <randOnOff>\n"
+				+ "\t* setEquipment <equipmentType> <equipment ID> <field ID>\n"
+				+ "\t* setSubstance <type> <amount> <field ID>\n"
+				+ "\t* setGencode <genType> <field ID>\n"
+				+ "\t* capeProtection <random/on/off>\n"
+				+ "\t* stealSubstance <virologist1 ID> <virologist2 ID>\n"
+				+ "\t* stealEquipment <equipment ID> <virologist1 ID> <virologist2 ID>\n"
+				+ "\t* learnGencode <virologist ID>\n"
+				+ "\t* takeEquipment <equipment ID> <virologist ID>\n"
+				+ "\t* dropEquipment <equipment ID> <virologist ID>\n"
+				+ "\t* takeSubstance <substanceType> <virologistID>\n"
+				+ "\t* kill <virologist1 ID> <virologist2 ID>\n"
+				+ "\t* craftAgent <agentType> <virologist ID>\n"
+				+ "\t* useAgent <agentType> <virologist1 ID> <virologist2 ID>\n"
+				+ "\t* stepAll\n"
+				+ "\t* save <fileName>\n"
+				+ "\t* help\n"
+				+ "\t* exit");
 	}
 
 

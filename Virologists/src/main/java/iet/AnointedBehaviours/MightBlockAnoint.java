@@ -1,6 +1,6 @@
 package main.java.iet.AnointedBehaviours;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 import main.java.iet.Agents.Agent;
 import main.java.iet.Core.Virologist;
@@ -14,9 +14,6 @@ public class MightBlockAnoint extends AnointedBehaviour {
      * A konstruktor beallitja a viselkedesi forma prioritasat
      */
     public MightBlockAnoint() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	setPriority(3);
     }
 
@@ -27,13 +24,10 @@ public class MightBlockAnoint extends AnointedBehaviour {
      * @param with Amivel felkenik
      */
     public boolean Anointed(Virologist by, Virologist to, Agent with) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	double r;
     	if(det==1) r = 0;
     	else if(det==-1) r = 1;
-    	else r = new Random().nextDouble();
+    	else r = rand.nextDouble();
     	 
     	if( r <= 0.832 ) {
     			return false;
@@ -45,6 +39,7 @@ public class MightBlockAnoint extends AnointedBehaviour {
     /**
      * determinisztikussagot kikapcsolja vagy be
      */
+    @Override
     public void setDet(String s) {
     	if(s.equals("on")) det = 1;
     	else if(s.equals("random")) det = 0;
@@ -52,5 +47,5 @@ public class MightBlockAnoint extends AnointedBehaviour {
 	}
     
     private int det = 0;
-
+	private SecureRandom rand = new SecureRandom();
 }

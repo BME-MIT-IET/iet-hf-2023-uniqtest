@@ -19,7 +19,7 @@ public class JNeighbourField extends JButton implements ActionListener {
     /**
      * Default constructor
      */
-    public JNeighbourField(Field field, int number) {
+    public JNeighbourField(Field field) {
     	addActionListener(this);
     	this.field = field;
 		setBackground(Color.PINK);

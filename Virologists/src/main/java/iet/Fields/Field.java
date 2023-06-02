@@ -21,8 +21,7 @@ public class Field implements Serializable {
      * Default constructor
      */
     public Field() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
+		/*  */
     }
 
     /**
@@ -38,7 +37,7 @@ public class Field implements Serializable {
     /**
      * A szomszedos mezok listaja.
      */
-    protected ArrayList<Field> neighbourFields = new ArrayList<Field>(); 
+    protected ArrayList<Field> neighbourFields = new ArrayList<>();
     
     /**
      * ideiglenes id hogy a proton barmit be lehessen kezzel allitani
@@ -67,9 +66,6 @@ public class Field implements Serializable {
      * @param v Hozzaadando virologus.
      */
     public void AddVirologist(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	virologists.add(v);
     }
 
@@ -78,9 +74,6 @@ public class Field implements Serializable {
      * @param v Eltavolitando virologus.
      */
     public void RemoveVirologist(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
         virologists.remove(v);
     }
 
@@ -90,9 +83,7 @@ public class Field implements Serializable {
      * @return A kivant mezo.
      */
     public Field GetNeighbour(int i) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
         return neighbourFields.get(i);
     }
     
@@ -100,9 +91,7 @@ public class Field implements Serializable {
      * A szomszedos mezok szamanak lekerese.
      */
     public int GetNeighbourFieldNum() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
     	return neighbourFields.size();
     }
 
@@ -111,9 +100,7 @@ public class Field implements Serializable {
      * @param e Felszereles, ami a Field-re kerul.
      */
     public void AddEquipment(Equipment e) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
     	equipments.add(e);
     }
 
@@ -122,9 +109,7 @@ public class Field implements Serializable {
      * @param e Eltavolitando felszereles.
      */
     public void RemoveEquipment(Equipment e) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-   
+
     	equipments.remove(e);
     }
 
@@ -164,15 +149,15 @@ public class Field implements Serializable {
 	    * Mezon levo amino mennyisegenek lekerese.
 		* @return Csak a StorageField-eken nem 0.
 		*/
-		public int GetAmino(int i) {
+		public int getAmino(int i) {
 			return 0;
 		}
 		
-		public int getAmino() {
+		public int getAllAmino() {
 	    	return 0;
 		}
 		
-		public int getNucleotid() {
+		public int getAllNucleotid() {
 	    	return 0;
 		}
 
@@ -186,7 +171,7 @@ public class Field implements Serializable {
 		 * Mezon levo nukleotid mennyisegenek lekerese.
 		 * @return Csak a StorageField-eken nem 0.
 		 */
-		public int GetNucleotid(int m) {
+		public int getNucleotid(int m) {
 			return 0;
 		}
 
@@ -197,8 +182,6 @@ public class Field implements Serializable {
 		public void setNucleotid(int nucleotid) {}
 		
 		public void addNeighbour(Field f) {
-			//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-	    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
 			this.neighbourFields.add(f);
 			f.neighbourFields.add(this);
 		}
@@ -214,7 +197,7 @@ public class Field implements Serializable {
 	     * minden mezon levo dolog listajaval ter vissza
 	     */
 		public ArrayList<JButton> getJItems() {
-			ArrayList<JButton> items = new ArrayList<JButton>();
+			ArrayList<JButton> items = new ArrayList<>();
 			for (Virologist v : virologists) {
 				items.add(v.getView());
 				if (v==Game.theGame.getActiveVirologist()) {
@@ -227,7 +210,7 @@ public class Field implements Serializable {
 			}
 			
 			for (int i=0; i<neighbourFields.size(); ++i){
-				items.add(neighbourFields.get(i).getView(i));
+				items.add(neighbourFields.get(i).getView());
 			}
 			
 			return items;
@@ -236,8 +219,8 @@ public class Field implements Serializable {
 		/**
 	     * gombot keszit a mezohoz es visszater vele
 	     */
-		public JButton getView(int num) {
-			return new JNeighbourField(this, num);
+		public JButton getView() {
+			return new JNeighbourField(this);
 		}
 		
 }

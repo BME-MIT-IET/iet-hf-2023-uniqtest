@@ -45,7 +45,7 @@ public class InteractVirologist implements ActionListener {
         d.setLocation(200, 200);
         
         
-        String s[] = options(selectedVirologist);
+        String[] s = options(selectedVirologist);
         c = new JComboBox<String>(s);
         d.add(c);
         

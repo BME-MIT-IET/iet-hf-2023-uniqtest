@@ -14,8 +14,6 @@ public class BearAgent extends Agent {
      * @param v a virologus, akin aktivalodik a hatasa
      */
     public void Activate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	
     	BearMove bm = new BearMove();
     	setVirologist(v);
@@ -28,12 +26,7 @@ public class BearAgent extends Agent {
      * Beallitja a parameterkent kapott virologus lepesi viselkedeset normalra
      * @param v a virologus, akin aktivalodik a hatasa
      */
-    public void Deactivate(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
-    	//v.RefreshEffects();
-    }
+    public void Deactivate(Virologist v) { /* Medvere nem vonatkozik */ }
     
     public String getId() {
  		return "BearAg";

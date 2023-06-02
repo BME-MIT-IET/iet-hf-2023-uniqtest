@@ -6,15 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerModel;
-import javax.swing.SpinnerNumberModel;
+import javax.swing.*;
 
 import main.java.iet.Core.Game;
 import main.java.iet.FileManagement.Serializer;
@@ -29,7 +21,8 @@ public class StartMenu extends JFrame implements ActionListener {
 	/**
 	 * Start gomb es File-bol valo betoltes gombja
 	 */
-	private JButton start_button, load_button;
+	private JButton startButton;
+	private JButton loadButton;
 	
 	private boolean ready = false;
 	
@@ -44,20 +37,20 @@ public class StartMenu extends JFrame implements ActionListener {
 		setLayout(new BorderLayout());
 		setSize(500,80);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setResizable(false);
-		start_button = new JButton("Start");
-		start_button.addActionListener(this);
-		load_button = new JButton("Load from file");
-		load_button.addActionListener(this);
+		startButton = new JButton("Start");
+		startButton.addActionListener(this);
+		loadButton = new JButton("Load from file");
+		loadButton.addActionListener(this);
 		numOfPlayer = new SpinnerNumberModel(3,1, 100, 1);     
 		JSpinner spinner = new JSpinner(numOfPlayer);
 		JLabel label = new JLabel("Jatekosok Szama:");
 		JPanel panel = new JPanel();
 		panel.add(label);
 		panel.add(spinner);
-		panel.add(start_button);
-		panel.add(load_button);
+		panel.add(startButton);
+		panel.add(loadButton);
 		add(panel,BorderLayout.CENTER);
 		setVisible(true);
 		
@@ -71,25 +64,24 @@ public class StartMenu extends JFrame implements ActionListener {
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==start_button) {
+		if (e.getSource()== startButton) {
 			game= new Game((int)numOfPlayer.getValue());
-			//game.InitGame();
-			//	IDEIGLENESEN KIVEVE, AMIG NINCS KIRAJZOLAS
+			//	IDEIGLENESEN KIVEVE, AMIG NINCS KIRAJZOLAS - game.InitGame();
 			GameTestInterfaceCommandFunction v = new GameTestInterfaceCommandFunction();
-			v.Main_Init((int)numOfPlayer.getValue(), game);
-			v.PlayerPlace((int)numOfPlayer.getValue(), game);
+			v.mainInit((int)numOfPlayer.getValue(), game);
+			v.playerPlace((int)numOfPlayer.getValue(), game);
 			
-		} else if (e.getSource()==load_button) {
+		} else if (e.getSource()== loadButton) {
 			JFileChooser fc = new JFileChooser();
 			int returnVal = fc.showOpenDialog(null);
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
 				game = new Serializer().deserialize(file.getAbsolutePath());
-				game.theGame.SetTheGame(game);
 				if (game == null) {
 					JOptionPane.showMessageDialog(this, "File is not valid");
 					System.exit(0);
 				}
+				game.theGame.SetTheGame(game);
 			}
 		}
 		ready=true;

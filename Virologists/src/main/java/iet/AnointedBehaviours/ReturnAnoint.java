@@ -15,9 +15,6 @@ public class ReturnAnoint extends AnointedBehaviour {
      * A konstruktor beallitja a viselkedesi forma prioritasat
      */
     public ReturnAnoint(Glove g) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	setPriority(2);
     	setGlove(g);
     }
@@ -29,9 +26,6 @@ public class ReturnAnoint extends AnointedBehaviour {
      * @param with Amivel felkenik
      */
     public boolean Anointed(Virologist by, Virologist to, Agent with) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
     	if (by.equals(to)) {
     		to.AddEffect(with);
     		return true;

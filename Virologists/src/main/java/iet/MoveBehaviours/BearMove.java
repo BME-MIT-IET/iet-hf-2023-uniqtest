@@ -1,6 +1,6 @@
 package main.java.iet.MoveBehaviours;
 
-import java.util.Random;
+import java.security.SecureRandom;
 
 import main.java.iet.Agents.BearAgent;
 import main.java.iet.Core.Virologist;
@@ -12,6 +12,7 @@ import main.java.iet.Graphics.JVirologist;
  *
  */
 public class BearMove extends MoveBehaviour {
+	private SecureRandom random = new SecureRandom();
 
 	/**
      * Default constructor
@@ -24,10 +25,10 @@ public class BearMove extends MoveBehaviour {
      * @param i A szomszedos mezo sorszamat megado szam.
      * @param v A virologus, aki lep.
      */
+	@Override
 	public void Move(int i, Virologist v) {
         Field actualField = v.getField();
         int neighboursNumber = actualField.GetNeighbourFieldNum();        
-        Random random = new Random();
         Field nextField = actualField.GetNeighbour(random.nextInt(neighboursNumber));
         actualField.RemoveVirologist(v);
         nextField.AddVirologist(v);
@@ -49,12 +50,14 @@ public class BearMove extends MoveBehaviour {
 	 * @param v1 gyilkolo
 	 * @param v2 gyilkolando
 	 */
-	public boolean Die(Virologist v1, Virologist v2) { 
+	@Override
+	public boolean Die(Virologist v1, Virologist v2) {
 		v2.getGame().getVirologists().remove(v2);
 		v2.getField().getVirologists().remove(v2);
 		return true;
 	}
-	
+
+	@Override
 	/**
 	 * medve gombjaval ter vissza
 	 */

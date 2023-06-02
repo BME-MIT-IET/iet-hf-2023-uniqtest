@@ -15,7 +15,7 @@ public abstract class Equipment implements Effect, Serializable{
     /**
      * Default constructor
      */
-    public Equipment(Virologist v) {
+    protected Equipment(Virologist v) {
     	setVirologist(v);
     }
     
@@ -68,6 +68,7 @@ public abstract class Equipment implements Effect, Serializable{
 	 * @param virologist the virologist to set
 	 */
 	public void setVirologist(Virologist virologist) {
+
 		this.virologist = virologist;
 	}
 

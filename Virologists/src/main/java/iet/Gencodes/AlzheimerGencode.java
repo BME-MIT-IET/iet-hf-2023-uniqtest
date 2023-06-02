@@ -12,12 +12,9 @@ public class AlzheimerGencode extends Gencode {
      * Default constructor
      */
     public AlzheimerGencode() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setAminoCost(4);
     	setNucleotidCost(6);
     	setName("AlzheimerGencode");
-    	//setType("alzCode");
     }
 
     /**
@@ -25,21 +22,19 @@ public class AlzheimerGencode extends Gencode {
      * @param v Virologus, aki kesziti.
      * @return alzheimer agens
      */
+    @Override
     public AlzheimerAgent Craft(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
         if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
         	v.setAmino(v.getAmino()-aminoCost);
         	v.setNucleotid(v.getNucleotid()-nucleotidCost);
-        	AlzheimerAgent aa = new AlzheimerAgent();
-        	return aa;
+        	return new AlzheimerAgent();
         }
         	
         	
         return null;
     }
-    
+
+    @Override
     public String getType() {
 		return "alzCode";
 	}

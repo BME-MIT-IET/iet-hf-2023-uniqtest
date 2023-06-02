@@ -12,8 +12,6 @@ public class DancerGencode extends Gencode {
      * Default constructor
      */
     public DancerGencode() {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
     	setAminoCost(4);
     	setNucleotidCost(3);
        	setName("DancerGencode");
@@ -24,21 +22,20 @@ public class DancerGencode extends Gencode {
      * @param v Virologus, aki kesziti.
      * @return vitustanc agens
      */
+	@Override
     public DancerAgent Craft(Virologist v) {
-    	//StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-    	//System.out.println("Method name: "+ stackTraceElements[1]+ "   Called by: "  + stackTraceElements[2]);
-    	
+
     	if (v.getAmino()>=aminoCost && v.getNucleotid()>=nucleotidCost) {
         	v.setAmino(v.getAmino()-aminoCost);
         	v.setNucleotid(v.getNucleotid()-nucleotidCost);
-    		DancerAgent da = new DancerAgent();
-    		return da;
+			return new DancerAgent();
     	}
     	
     	
     	return null;
     }
-    
+
+	@Override
     public String getType() {
 		return "danCode";
 	}

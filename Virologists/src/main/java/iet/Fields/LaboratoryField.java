@@ -28,6 +28,7 @@ public class LaboratoryField extends Field {
      * Mezon levo genetikai kod lekerese.
 	 * @return gencode
 	 */
+	@Override
 	public Gencode getGencode() {
 		return gencode;
 	}
@@ -36,6 +37,7 @@ public class LaboratoryField extends Field {
 	 * Setter a mezon levo genetikai kodhoz.
 	 * @param gencode Beallitando genetikai kod.
 	 */
+	@Override
 	public void setGencode(Gencode gencode) {
 		this.gencode = gencode;
 	}
@@ -48,8 +50,9 @@ public class LaboratoryField extends Field {
     /**
      * minden mezon levo dolog listajaval ter vissza
      */
+	@Override
     public ArrayList<JButton> getJItems() {
-		ArrayList<JButton> items = new ArrayList<JButton>();
+		ArrayList<JButton> items = new ArrayList<>();
 		for (Virologist v : virologists) {
 			items.add(v.getView());
 			if (v==Game.theGame.getActiveVirologist()) {
@@ -64,7 +67,7 @@ public class LaboratoryField extends Field {
 		items.add(new JGencode(gencode));
 		
 		for (int i=0; i<neighbourFields.size(); ++i){
-			items.add(neighbourFields.get(i).getView(i));
+			items.add(neighbourFields.get(i).getView());
 		}
 		
 		return items;
